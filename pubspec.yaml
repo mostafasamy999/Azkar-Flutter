@@ -1,0 +1,76 @@
+name: sahih_azkar
+description: A new Flutter project.
+
+version: 1.4.0+4
+
+environment:
+  sdk: '>=2.19.4 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  equatable: ^2.0.7
+  shared_preferences: ^2.3.5
+  dartz: ^0.10.1
+  get_it: ^8.0.3
+  flutter_bloc: ^9.0.0
+  cupertino_icons: ^1.0.8
+  vibration: ^3.0.0
+  audioplayers: ^6.1.0
+  url_launcher: ^6.3.1
+  flutter_local_notifications: ^18.0.1
+  permission_handler: ^11.3.1
+  http: ^1.2.2
+#  connectivity_plus: ^6.1.2
+  internet_connection_checker: ^3.0.1
+  fluttertoast: ^8.2.10
+  location: ^7.0.1
+  geocoding: ^3.0.0
+
+  in_app_update: ^4.2.3
+  package_info_plus: ^8.2.1
+  device_info_plus: ^11.3.0
+  share_plus: ^10.1.4
+  in_app_review: ^2.0.10
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_svg: ^2.0.17
+
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/ic_launcher.xml"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/reload.png
+    - assets/images/ic_menu.svg
+    - assets/images/baseline_error_24_white.svg
+    - assets/images/baseline_settings_24.svg
+    - assets/images/ic_baseline_check_circle_24.svg
+    - assets/audio/light_button.mp3
+    - assets/images/facebook.svg
+    - assets/images/ic_launcher.xml
+    - assets/images/ic_launcher.png
+    - assets/images/ic_launcher_small.png
+    - assets/images/shar.svg
+    - assets/images/
+
+  fonts:
+    - family: typesetting
+      fonts:
+        - asset: fonts/typesetting.ttf
+    - family: alfont
+      fonts:
+        - asset: fonts/alfont_com_alfont_com_4_30.ttf
+    - family: amiri
+      fonts:
+        - asset: fonts/Amiri-Regular.ttf
+    - family: scheherazade
+      fonts:
+        - asset: fonts/ScheherazadeNew-Regular.ttf

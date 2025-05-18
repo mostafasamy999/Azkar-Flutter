@@ -1,0 +1,13 @@
+{
+  "id": 1,
+  "name": "أذكار الصباح",
+  "hadith": [
+    {
+      "id": 1,
+      "matn": "some title",
+      "isnad": "some body",
+      "no_repeat": 10,
+      "state": 0
+    }
+  ]
+}
