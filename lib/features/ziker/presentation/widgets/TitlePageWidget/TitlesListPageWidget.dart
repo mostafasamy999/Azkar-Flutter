@@ -57,7 +57,8 @@ class AzkarListWidget extends StatelessWidget {
           color: AppColors.c6Item,
           child: ListTile(
             title: Text(
-            '${azkarWithoutPrayHaijOmra[index].id}- ${azkarWithoutPrayHaijOmra[index].name.removeNumberInParentheses()}',
+            '${azkarWithoutPrayHaijOmra[index].name.removeNumberInParentheses()}',
+            // '${azkarWithoutPrayHaijOmra[index].id}- ${azkarWithoutPrayHaijOmra[index].name.removeNumberInParentheses()}',
             style: TextStyle(
                 fontSize: Utils().fontSize(fontSize),
               ),

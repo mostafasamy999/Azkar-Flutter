@@ -62,7 +62,8 @@ void showListDialog(
                     itemBuilder: (context, index) {
                       return ListTile(
                         title: Text(
-                          '${azkar[index].id}- ${azkar[index].name.removeNumberInParentheses()}' ,
+                          '${azkar[index].name.removeNumberInParentheses()}' ,
+                          // '${azkar[index].id}- ${azkar[index].name.removeNumberInParentheses()}' ,
                           style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
