@@ -19,7 +19,7 @@ class Zikerrepositoryimpl implements ZikerRepository {
   @override
   Future<Either<Failure, List<Ziker>>> getZikerListWithoutPray()  async {
       try {
-        final localPosts = await zikerDataSource.getZikerListWithoutPray();
+        final localPosts = await zikerDataSource.getZikerListWithoutPrayHaijOmra();
         return Right(localPosts);
       } on EmptyCacheException {
         return Left(EmptyCacheFailure());
@@ -29,6 +29,24 @@ class Zikerrepositoryimpl implements ZikerRepository {
   Future<Either<Failure, List<Ziker>>> getPrayZikerList()  async {
       try {
         final localPosts = await zikerDataSource.getPrayZikerList();
+        return Right(localPosts);
+      } on EmptyCacheException {
+        return Left(EmptyCacheFailure());
+      }
+  }
+  @override
+  Future<Either<Failure, List<Ziker>>> getHaijZikerList()  async {
+      try {
+        final localPosts = await zikerDataSource.getHaijZikerList();
+        return Right(localPosts);
+      } on EmptyCacheException {
+        return Left(EmptyCacheFailure());
+      }
+  }
+  @override
+  Future<Either<Failure, List<Ziker>>> getOmraZikerList()  async {
+      try {
+        final localPosts = await zikerDataSource.getOmraZikerList();
         return Right(localPosts);
       } on EmptyCacheException {
         return Left(EmptyCacheFailure());

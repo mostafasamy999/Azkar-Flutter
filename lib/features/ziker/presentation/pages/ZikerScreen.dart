@@ -65,17 +65,7 @@ class ZikerScreen extends StatelessWidget {
             return LoadingWidget();
           } else if (state is LoadedAzkarState) {
             // Use firstWhere instead of singleWhere
-            Ziker ziker_azkarWithoutPray = state.azkarWithoutPray.firstWhere(
-                  (ziker) => ziker.name == zikerTitle,
-              orElse: () => ZikerResponse(-1, '', []),
-            );
-            Ziker ziker_pryaAzkar = state.pryaAzkar.firstWhere(
-                  (ziker) => ziker.name == zikerTitle,
-              orElse: () => ZikerResponse(-1, '', []),
-            );
-            final ziker = (ziker_azkarWithoutPray.id != -1)
-                ? ziker_azkarWithoutPray
-                : ziker_pryaAzkar;
+            final ziker = _findZikerByTitle(zikerTitle, state);
             return Container(child: ZikerPageWidget(azkar: ziker));
           } else if (state is ErrorAzkarState) {
             return MessageDisplayWidget(message: state.message);
@@ -85,4 +75,25 @@ class ZikerScreen extends StatelessWidget {
       ),
     );
   }
+  Ziker _findZikerByTitle(String zikerTitle, LoadedAzkarState state) {
+    final lists = [
+      state.azkarWithoutPray,
+      state.pryaAzkar,
+      state.haijAzkar,
+      state.omraAzkar,
+    ];
+
+    for (final list in lists) {
+      final ziker = list.firstWhere(
+            (ziker) => ziker.name == zikerTitle,
+        orElse: () => ZikerResponse(-1, '', []),
+      );
+      if (ziker.id != -1) {
+        return ziker;
+      }
+    }
+
+    return ZikerResponse(-1, '', []); // Return default if not found in any list
+  }
+
 }

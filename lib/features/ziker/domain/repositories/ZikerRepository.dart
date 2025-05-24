@@ -7,4 +7,7 @@ import '../entities/Ziker.dart';
 abstract class ZikerRepository {
   Future<Either<Failure, List<Ziker>>> getZikerListWithoutPray();
   Future<Either<Failure, List<Ziker>>>  getPrayZikerList();
+  Future<Either<Failure, List<Ziker>>> getOmraZikerList();
+  Future<Either<Failure, List<Ziker>>> getHaijZikerList() ;
+
 }

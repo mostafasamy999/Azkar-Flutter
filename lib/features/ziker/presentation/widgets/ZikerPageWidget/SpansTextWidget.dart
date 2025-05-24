@@ -7,8 +7,9 @@ class SpansTextWidget extends StatelessWidget {
   final String text;
   final TextStyle style;
   final TextAlign? textAlign;
+  final Color? referenceColor;
 
-  SpansTextWidget({required this.text, required this.style, this.textAlign});
+  SpansTextWidget({required this.text, required this.style, this.textAlign, this.referenceColor});
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +44,7 @@ class SpansTextWidget extends StatelessWidget {
             "(${match.group(1)})".replaceArabicNumbers(),
             style: TextStyle(
               fontSize: style.fontSize! * 0.5, // Smaller size
-              color: Colors.blue,      // Blue color
+              color: referenceColor??Colors.blue,      // Blue color
             ),
           ),
         ),
@@ -62,7 +63,7 @@ class SpansTextWidget extends StatelessWidget {
 
     return Text.rich(TextSpan(children: spans
     )
-      ,  textAlign: textAlign,
+      ,  textAlign: textAlign??TextAlign.start,
     );
   }
 }

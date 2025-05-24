@@ -1,4 +1,6 @@
 import 'package:get_it/get_it.dart';
+import 'package:sahih_azkar/features/ziker/domain/usecases/GetHaijAzkarUsecase.dart';
+import 'package:sahih_azkar/features/ziker/domain/usecases/GetOmraAzkarUsecase.dart';
 import 'package:sahih_azkar/features/ziker/domain/usecases/GetPrayAzkarUsecase.dart';
 
 import 'features/ziker/data/datasources/PrayerTimesDataSource.dart';
@@ -25,11 +27,16 @@ import 'features/ziker/presentation/bloc/azkar/setting/SettingBloc.dart';
 final sl = GetIt.instance;
 
 Future<void> init() async {
-
   // Bloc
-  sl.registerFactory(() => AzkarBloc(getZikerListWithoutPrayUseCase: sl(),getPrayAzkarUseCase: sl()));
-  sl.registerFactory(() => SettingBloc(getSettingUsecase: sl(), updateSettingUsecase: sl()));
-  sl.registerFactory(() => PrayerTimesCubit(  getPrayerTimesUsecase: sl()));
+  sl.registerFactory(() => AzkarBloc(
+      getZikerListWithoutPrayHaijOmraUseCase: sl(),
+      getPrayAzkarUseCase: sl(),
+  getHaijAzkarUseCase: sl(),
+  getOmraAzkarUseCase: sl()
+  ));
+  sl.registerFactory(
+      () => SettingBloc(getSettingUsecase: sl(), updateSettingUsecase: sl()));
+  sl.registerFactory(() => PrayerTimesCubit(getPrayerTimesUsecase: sl()));
 
   // Usecases
   sl.registerLazySingleton(() => GetPrayAzkarUseCase(sl()));
@@ -37,19 +44,24 @@ Future<void> init() async {
   sl.registerLazySingleton(() => GetOldSettingUsecase(sl()));
   sl.registerLazySingleton(() => UpdateSettingUsecase(sl()));
   sl.registerLazySingleton(() => GetPrayerTimesUsecase(sl()));
+  sl.registerLazySingleton(() => GetHaijAzkarUseCase(sl()));
+  sl.registerLazySingleton(() => GetOmraAzkarUseCase(sl()));
 
   // Repository
-  sl.registerLazySingleton<ZikerRepository>(() => Zikerrepositoryimpl( zikerDataSource: sl()));
-  sl.registerLazySingleton<SettingRepository>(() => SettingRepositoryImpl(settingDataSource: sl()));
-  sl.registerLazySingleton<PrayerTimeRepository>(() => PrayerTimeRepositoryImpl(remoteDataSource: sl()));
+  sl.registerLazySingleton<ZikerRepository>(
+      () => Zikerrepositoryimpl(zikerDataSource: sl()));
+  sl.registerLazySingleton<SettingRepository>(
+      () => SettingRepositoryImpl(settingDataSource: sl()));
+  sl.registerLazySingleton<PrayerTimeRepository>(
+      () => PrayerTimeRepositoryImpl(remoteDataSource: sl()));
 
   // Datasources
   sl.registerLazySingleton<ZikerLocalDataSource>(
-          () => ZikerLocalDataSourceImpl());
+      () => ZikerLocalDataSourceImpl());
   sl.registerLazySingleton<SettingDataSource>(
-          () => SettingDataSourceImpl(sharedPreferences: sl()));
+      () => SettingDataSourceImpl(sharedPreferences: sl()));
   sl.registerLazySingleton<PrayerTimesRemoteDataSource>(
-          () => PrayerTimesRemoteDataSourceImpl(client: sl()));
+      () => PrayerTimesRemoteDataSourceImpl(client: sl()));
 
   // External
   final sharedPreferences = await SharedPreferences.getInstance();

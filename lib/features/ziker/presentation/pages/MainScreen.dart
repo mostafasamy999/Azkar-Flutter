@@ -27,6 +27,7 @@ class _MyHomePageState extends State<MainScreen> {
   final String? title;
 
   _MyHomePageState(this.title);
+
   @override
   void initState() {
     super.initState();
@@ -38,11 +39,6 @@ class _MyHomePageState extends State<MainScreen> {
     NotificationHelper.requestPermissions();
     NotificationHelper.updatePrayersTime(context);
     _handleOnClickNotificationEvent(title);
-    //test notification
-    // NotificationHelper.showTestNotification();
-    // NotificationHelper.testScheduledNotification();
-    // NotificationHelper.scheduleTestNotificationIn5Minutes('title', 'body');
-    // print('areNotificationsEnabled: ${NotificationHelper.areNotificationsEnabled()}');
   }
 
   @override
@@ -88,7 +84,6 @@ class _MyHomePageState extends State<MainScreen> {
             } else {
               _scaffoldKey.currentState!.openEndDrawer();
             }
-            // NotificationHelper.requestPermissions();//todo
           }));
 
   Widget _drawerAndBody() {
@@ -109,7 +104,13 @@ class _MyHomePageState extends State<MainScreen> {
           if (state is LoadingAzkarState) {
             return LoadingWidget();
           } else if (state is LoadedAzkarState) {
-            return Container(child: AzkarListWidget(azkarWithoutPray: state.azkarWithoutPray,prayAzkar: state.pryaAzkar,));
+            return Container(
+                child: AzkarListWidget(
+              azkarWithoutPrayHaijOmra: state.azkarWithoutPray,
+              prayAzkar: state.pryaAzkar,
+              haijAzkar: state.haijAzkar,
+              omraAzkar: state.omraAzkar,
+            ));
           } else if (state is ErrorAzkarState) {
             return MessageDisplayWidget(message: state.message);
           }

@@ -89,26 +89,26 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
 
   Widget _zikerTitleContent({required double fontSize}) {
     return Container(
-      padding: const EdgeInsets.only(right: 10, left: 10),
-      child: Container(
-        decoration: BoxDecoration(
-          color: AppColors.c3,
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        padding: EdgeInsets.all(8.0),
-        child: Center(
-          child: Text(
-            widget.azkar.name,
-            style: TextStyle(
-              fontSize: fontSize,
-              color: AppColors.c4Actionbar,
-              fontWeight: FontWeight.bold,
-            ),
-            textAlign: TextAlign.center,
+        padding: const EdgeInsets.only(right: 10, left: 10),
+        child: Container(
+          decoration: BoxDecoration(
+            color: AppColors.c3,
+            borderRadius: BorderRadius.circular(10.0),
           ),
-        ),
-      ),
-    );
+          padding: EdgeInsets.all(8.0),
+          child: Center(
+            child: SpansTextWidget(
+              text: widget.azkar.name,
+              textAlign: TextAlign.center,
+              referenceColor:AppColors.c4Actionbar,
+              style: TextStyle(
+                fontSize: fontSize,
+                color: AppColors.c4Actionbar,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ));
   }
 
   Widget _ViewPager() {
@@ -269,7 +269,7 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                _IsnadTexts(ZikerIndex: widget.azkar.id, hadith: myObject),
+                _MatnTexts(ZikerIndex: widget.azkar.id, hadith: myObject),
                 if (myObject.isnad.isNotEmpty)
                   CustomPaint(
                     size: ui.Size(double.infinity, 2),
@@ -325,7 +325,7 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
     );
   }
 
-  Widget _IsnadTexts({required int ZikerIndex, required Hadith hadith}) {
+  Widget _MatnTexts({required int ZikerIndex, required Hadith hadith}) {
     String matn = hadith.matn;
     String title = "";
     if (hadith.hasTitle) {
@@ -339,7 +339,7 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (hadith.hasTitle)
+          if (hadith.hasTitle) ...[
             Align(
               alignment: Alignment.center,
               child: SpansTextWidget(
@@ -354,7 +354,8 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
                 textAlign: TextAlign.center,
               ),
             ),
-          if (hadith.hasTitle) SizedBox(height: 8),
+            SizedBox(height: 8),
+          ],
           SpansTextWidget(
             text: matn,
             style: TextStyle(

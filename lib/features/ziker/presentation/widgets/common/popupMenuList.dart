@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:sahih_azkar/core/utils/Utils.dart';
 
 import '../../../domain/entities/Ziker.dart';
 import '../../pages/ZikerScreen.dart';
 
 
 void showListDialog(
-    {required BuildContext context,required  List<Ziker> azkar,required  void Function(String) onTap}) {
+    {required BuildContext context,required  List<Ziker> azkar,required  void Function(String) onTap, required String title}) {
   // Calculate the height based on screen size, max 80% of screen height
   final double screenHeight = MediaQuery.of(context).size.height;
   final double dialogHeight = screenHeight * 0.7 > 600 ? 600 : screenHeight * 0.7;
@@ -34,9 +35,9 @@ void showListDialog(
                     topRight: Radius.circular(20),
                   ),
                 ),
-                child: const Center(
+                child:  Center(
                   child: Text(
-                    'ما كان يقرأ به ﷺ في الصلوات',
+                    title,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
@@ -61,7 +62,7 @@ void showListDialog(
                     itemBuilder: (context, index) {
                       return ListTile(
                         title: Text(
-                          azkar[index].name,
+                          '${azkar[index].id}- ${azkar[index].name.removeNumberInParentheses()}' ,
                           style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
@@ -69,7 +70,7 @@ void showListDialog(
                           textAlign: TextAlign.right,
                         ),
                         contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-                        trailing: const Icon(Icons.menu_book_outlined, color: Color(0xFF3C5665)),
+                        // trailing: const Icon(Icons.menu_book_outlined, color: Color(0xFF3C5665)),
                         onTap: () {
                           Navigator.pop(context);
                           onTap(azkar[index].name);
@@ -83,28 +84,28 @@ void showListDialog(
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF3C5665),
-                        foregroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                      ),
-                      child: const Text('إغلاق'),
-                    ),
-                  ],
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.all(12.0),
+              //   child: Row(
+              //     mainAxisAlignment: MainAxisAlignment.center,
+              //     children: [
+              //       ElevatedButton(
+              //         onPressed: () {
+              //           Navigator.pop(context);
+              //         },
+              //         style: ElevatedButton.styleFrom(
+              //           backgroundColor: const Color(0xFF3C5665),
+              //           foregroundColor: Colors.white,
+              //           shape: RoundedRectangleBorder(
+              //             borderRadius: BorderRadius.circular(12),
+              //           ),
+              //           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+              //         ),
+              //         child: const Text('إغلاق'),
+              //       ),
+              //     ],
+              //   ),
+              // ),
             ],
           ),
         ),

@@ -75,4 +75,13 @@ extension ReplaceArabicString on int {
     }
   }
 }
+extension RemoveNumberInParentheses on String {
+  String removeNumberInParentheses() {
+    // Regular expression to match (number) pattern
+    RegExp regExp = RegExp(r'\(\d+\)');
+
+    // Replace all occurrences with empty string
+    return this.replaceAll(regExp, '');
+  }
+}
 
