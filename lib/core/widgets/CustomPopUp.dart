@@ -35,7 +35,7 @@ class CustomPopupWidget extends StatelessWidget {
               SvgPicture.asset(
                 'assets/images/ic_baseline_check_circle_24.svg',
                 height: 72,
-                color: AppColors.c4Actionbar,
+                // color: AppColors.c4Actionbar,
               ),
             ],
           ),
@@ -51,7 +51,7 @@ class CustomPopupWidget extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: AppColors.c4Actionbar,
+                  // color: AppColors.c4Actionbar,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: const Text(
@@ -68,12 +68,14 @@ class CustomPopupWidget extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: AppColors.cCancelBG,
+                // color: AppColors.cCancelBG,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: const Text(
                 "الغاء",
-                style: TextStyle(fontSize: 16, color: AppColors.c4Actionbar),
+                style: TextStyle(fontSize: 16,
+                    // color: AppColors.c4Actionbar
+                  ),
                 textAlign: TextAlign.center,
               ),
             ),

@@ -24,7 +24,8 @@ dependencies:
 #  connectivity_plus: ^6.1.2
   internet_connection_checker: ^3.0.1
   fluttertoast: ^8.2.10
-  location: ^7.0.1
+#  location: ^7.0.1
+  geolocator: ^10.1.0
   geocoding: ^3.0.0
 
   in_app_update: ^4.2.3

@@ -8,6 +8,7 @@ class GetPrayerTimesUsecase {
   GetPrayerTimesUsecase(this.repository);
 
   Future<NetworkState<PrayerTime>> call(String city, String country) async {
+    print('mossamy:usecase');
     return await repository.getPrayerTimes(city, country);
   }
 }

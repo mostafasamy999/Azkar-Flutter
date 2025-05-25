@@ -12,6 +12,7 @@ class PrayerTimeRepositoryImpl implements PrayerTimeRepository {
 
   @override
   Future<NetworkState<PrayerTime>> getPrayerTimes(String city, String country) async {
+    print('mossamy:reo');
 
     if(!await checkInternetConnection()) {
       return NetworkState.error('تاكد من اتصال الانترنت');

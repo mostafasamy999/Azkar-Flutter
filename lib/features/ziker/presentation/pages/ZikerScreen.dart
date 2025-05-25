@@ -13,8 +13,9 @@ import '../widgets/titlePageWidget/message_display_widget.dart';
 
 class ZikerScreen extends StatelessWidget {
   final String zikerTitle;
+  final int type;
 
-  ZikerScreen({required this.zikerTitle});
+  ZikerScreen({required this.zikerTitle,required this.type});
 
   @override
   Widget build(BuildContext context) {
@@ -25,36 +26,18 @@ class ZikerScreen extends StatelessWidget {
           body: _buildBody(),
         ));
   }
-
   AppBar _appBar(BuildContext context) => AppBar(
-      title: BlocBuilder<AzkarBloc, AzkarState>(
-        builder: (context, state) {
-          if (state is LoadedAzkarState) {
-            return BlocBuilder<SettingBloc, SettingState>(
-              builder: (context, state) {
-                if (state is LoadedSettingState) {
-                  return Text(
-                    'صحيح الأذكار',
-                    style: TextStyle(
-                        fontSize: Utils().fontSize(state.setting.fontSize)),
-                  );
-                }
-
-                return Text(
-                  'صحيح الأذكار',
-                  style: TextStyle(fontSize: Utils().fontSize(FontSize.Median)),
-                );
-              },
-            );
-          } else if (state is ErrorAzkarState) {}
-          return const Text('صحيح الأذكار');
-        },
+      title:  Text(
+        getTitle(type),
+        style: TextStyle(
+            fontSize: 24),
       ),
       leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           }));
+
 
   Widget _buildBody() {
     return Padding(
@@ -66,7 +49,7 @@ class ZikerScreen extends StatelessWidget {
           } else if (state is LoadedAzkarState) {
             // Use firstWhere instead of singleWhere
             final ziker = _findZikerByTitle(zikerTitle, state);
-            return Container(child: ZikerPageWidget(azkar: ziker));
+            return Container(child: ZikerPageWidget(azkar: ziker,type: type,));
           } else if (state is ErrorAzkarState) {
             return MessageDisplayWidget(message: state.message);
           }

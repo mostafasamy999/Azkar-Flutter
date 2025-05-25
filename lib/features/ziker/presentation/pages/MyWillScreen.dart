@@ -56,7 +56,7 @@ class MyWillScreen extends StatelessWidget {
 
   Widget _bodyContent(double fontSize) {
     return Container(
-      color: AppColors.c2Read,
+      // color: AppColors.c2Read,
       padding: EdgeInsets.only(left: 12.0, right: 12.0, top: 16.0, bottom: 16.0),
       child: SingleChildScrollView(
         child: Column(
@@ -68,7 +68,7 @@ class MyWillScreen extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'alfont',
                   fontWeight: FontWeight.bold,
-                  color: AppColors.c4Actionbar,
+                  color: AppColors.primary,
                   fontSize: fontSize * 3,
                 ),
               ),
@@ -77,7 +77,7 @@ class MyWillScreen extends StatelessWidget {
             RichText(
               text: TextSpan(
                 style: TextStyle(
-                  color: AppColors.c4Actionbar,
+                  color: AppColors.primary,
                   fontSize: fontSize,
                 ),
                 children: [
@@ -95,7 +95,7 @@ class MyWillScreen extends StatelessWidget {
             Text(
               'هذا ما أَوْصَى به ........................ وهو يشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدًا عبده ورسوله، وأن عيسى عبد الله ورسوله، وكلمته ألقاها إلى مريم وروح منه، وأنَّ الجنَّة حقٌّ، وأن النار حق، وأن الساعة لا ريب فيها، وأن الله يبعث من في القبور، وأوصي أولادي وأهلي وأقاربي وجميع المسلمين بتقوى الله عز وجل، وأوصيهم بما وَصَّى به إبراهيم بنيه ويعقوب: {وَوَصَّى بِهَا إِبْرَاهِيمُ بَنِيهِ وَيَعْقُوبُ يَا بَنِيَّ إِنَّ اللَّهَ اصْطَفَى لَكُمُ الدِّينَ فَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مسلمون).',
               style: TextStyle(
-                color: AppColors.c4Actionbar,
+                // color: AppColors.c4Actionbar,
                 fontSize: fontSize,
               ),
             ),
@@ -135,7 +135,7 @@ class MyWillScreen extends StatelessWidget {
             Text(
               'هذا وأنا برئ ممن برئ منه رسول الله  ؛برئ من الصالقة والحالقة والحالقة  والشاقة.',
               style: TextStyle(
-                color: AppColors.c4Actionbar,
+                // color: AppColors.c4Actionbar,
                 fontSize: fontSize,
               ),
             ),
@@ -143,7 +143,7 @@ class MyWillScreen extends StatelessWidget {
             Text(
               'الصالقة: المولولة بالصوت الشديد، والحالقة : تحلق شعرها عند المصيبة، والشاقة : تشق ثيابها',
               style: TextStyle(
-                color: AppColors.c4Actionbar,
+                // color: AppColors.c4Actionbar,
                 fontSize: fontSize * 0.9,
                 fontStyle: FontStyle.italic,
               ),
@@ -152,7 +152,7 @@ class MyWillScreen extends StatelessWidget {
             Text(
               'وأنهى عن رفع الصوت بالبكاء، والنياحة، ولطم الخدود، وشقُّ الثياب، ولبس السواد؛ لقوله صلى الله عليه وسلم : ((الميت يُعذَّب في قبره بما نِيحَ عليه))',
               style: TextStyle(
-                color: AppColors.c4Actionbar,
+                // color: AppColors.c4Actionbar,
                 fontSize: fontSize,
               ),
             ),
@@ -160,7 +160,7 @@ class MyWillScreen extends StatelessWidget {
             Text(
               'وأنهى عن وضع الأحجار العالية وفرشة الحجر وغيرها على القبر، وكذلك تدهينه والكتابة عليه أو تجصيصه  .',
               style: TextStyle(
-                color: AppColors.c4Actionbar,
+                // color: AppColors.c4Actionbar,
                 fontSize: fontSize,
               ),
             ),
@@ -168,7 +168,7 @@ class MyWillScreen extends StatelessWidget {
             Text(
               'وأنهى عن الاجتماع في الذكرى السنوية والأربعين او الخميس وتأجير من يقرأ القرآن فهي من البدع والمحرمات.، وأنهى عن اتخاذ قبري عيدا فلا يخص بالزيارة في يوم أو شهر أو ما شابه.',
               style: TextStyle(
-                color: AppColors.c4Actionbar,
+                // color: AppColors.c4Actionbar,
                 fontSize: fontSize,
               ),
             ),
@@ -176,7 +176,7 @@ class MyWillScreen extends StatelessWidget {
             Text(
               'وأنهى نسائي عن الإكثار من زيارة قبري فقد نهى عن ذلك رسول الله .  ',
               style: TextStyle(
-                color: AppColors.c4Actionbar,
+                // color: AppColors.c4Actionbar,
                 fontSize: fontSize,
               ),
             ),
@@ -184,7 +184,7 @@ class MyWillScreen extends StatelessWidget {
             Text(
               'وأنهى عن تأجير جماعة عتاقة أو ختمة أو إسقاط صلاة عني.',
               style: TextStyle(
-                color: AppColors.c4Actionbar,
+                // color: AppColors.c4Actionbar,
                 fontSize: fontSize,
               ),
             ),
@@ -192,7 +192,7 @@ class MyWillScreen extends StatelessWidget {
             Text(
               'ويُكتفى بوضع حجر بارتفاع شبر؛ ليعرف القبر، كما فعل الرسول صلى الله عليه وسلم عندما وضع حجرًا على قبر عثمان بن مظعون، وقال: ((أتعلَّم بها قبر أخي)).',
               style: TextStyle(
-                color: AppColors.c4Actionbar,
+                // color: AppColors.c4Actionbar,
                 fontSize: fontSize,
               ),
             ),
@@ -200,12 +200,16 @@ class MyWillScreen extends StatelessWidget {
             Text(
               'والحمد لله رب العالمين ، فاللَّهُمَّ بِعِلْمِكَ الْغَيْبَ وَقُدْرَتِكَ عَلَى الْخَلْقِ ؛ أَحْيِنِي مَا عَلِمْتَ الْحَيَاةَ خَيْرًا لِي، وَتَوَفَّنِي إِذَا عَلِمْتَ الْوَفَاةَ خَيْرًا لِي، اللَّهُمَّ وَأَسْأَلُكَ خَشْيَتَكَ فِي الْغَيْبِ وَالشَّهَادَةِ، وَأَسْأَلُكَ كَلِمَةَ الْحَقِّ فِي الرِّضَا وَالْغَضَبِ، وَأَسْأَلُكَ الْقَصْدَ فِي الْفَقْرِ وَالْغِنَى، وَأَسْأَلُكَ نَعِيمًا لَا يَنْفَدُ، وَأَسْأَلُكَ قُرَّةَ عَيْنٍ لَا تَنْقَطِعُ، وَأَسْأَلُكَ الرِّضَاءَ بَعْدَ الْقَضَاءِ، وَأَسْأَلُكَ بَرْدَ الْعَيْشِ بَعْدَ الْمَوْتِ، وَأَسْأَلُكَ لَذَّةَ النَّظَرِ إِلَى وَجْهِكَ وَالشَّوْقَ إِلَى لِقَائِكَ فِي غَيْرِ ضَرَّاءَ مُضِرَّةٍ وَلَا فِتْنَةٍ مُضِلَّةٍ، اللَّهُمَّ زَيِّنَّا بِزِينَةِ الْإِيمَانِ، وَاجْعَلْنَا هُدَاةً مُهْتَدِينَ "،اللَّهُمَّ أَصْلِحْ لِي دِينِي الَّذِي هُوَ عِصْمَةُ أَمْرِي، وَأَصْلِحْ لِي دُنْيَايَ الَّتِي فِيهَا مَعَاشِي، وَأَصْلِحْ لِي آخِرَتِي الَّتِي فِيهَا مَعَادِي، وَاجْعَلِ الْحَيَاةَ زِيَادَةً لِي فِي كُلِّ خَيْرٍ، وَاجْعَلِ الْمَوْتَ رَاحَةً لِي مِنْ كُلِّ شَرٍّ ".',
               style: TextStyle(
-                color: AppColors.c4Actionbar,
+                // color: AppColors.c4Actionbar,
                 fontSize: fontSize,
               ),
             ),
             SizedBox(height: 20.0),
-            Divider(color: AppColors.c4Actionbar.withOpacity(0.3)),
+            Divider(
+                // color: AppColors.c4Actionbar.withOpacity(0.3
+                // )
+    )
+            ,
             SizedBox(height: 12.0),
             // Text(
             //   'الموصي بما فيه :..............................',
@@ -253,7 +257,7 @@ class MyWillScreen extends StatelessWidget {
         Text(
           '•  ',
           style: TextStyle(
-            color: AppColors.c4Actionbar,
+            // color: AppColors.c4Actionbar,
             fontSize: fontSize,
             fontWeight: FontWeight.bold,
           ),
@@ -262,7 +266,7 @@ class MyWillScreen extends StatelessWidget {
           child: Text(
             text,
             style: TextStyle(
-              color: AppColors.c4Actionbar,
+              // color: AppColors.c4Actionbar,
               fontSize: fontSize,
             ),
           ),

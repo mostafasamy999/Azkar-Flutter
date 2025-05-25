@@ -14,6 +14,7 @@ class PrayerTimesRemoteDataSourceImpl implements PrayerTimesRemoteDataSource {
 
   @override
   Future<PrayerTimeResponse> getPrayerTimes(String city, String country) async {
+    print('mossamy:api');
     final url = 'http://api.aladhan.com/v1/timingsByCity?city=$city&country=$country';
 
     final response = await client.get(Uri.parse(url));

@@ -14,23 +14,23 @@ class Utils {
     if (input is int) {
       switch (input) {
         case 1:
-          return 16;
-        case 2:
           return 18;
-        case 3:
+        case 2:
           return 20;
+        case 3:
+          return 22;
       }
     } else if (input is FontSize) {
       switch (input) {
         case FontSize.Small :
-          return 16;
-        case FontSize.Median:
           return 18;
-        case FontSize.Large:
+        case FontSize.Median:
           return 20;
+        case FontSize.Large:
+          return 22;
       }
     }
-    return 18;
+    return 20;
   }
 
 }
@@ -83,5 +83,12 @@ extension RemoveNumberInParentheses on String {
     // Replace all occurrences with empty string
     return this.replaceAll(regExp, '');
   }
+}
+
+String getTitle(int type) {
+  if(type == 1)return 'الأذكار اليومية';
+  else if (type == 2)return 'قرائات الصلوات';
+  else if (type == 3)return 'دليل الحج';
+  else return 'دليل العمرة';
 }
 

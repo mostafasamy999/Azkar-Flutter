@@ -58,7 +58,7 @@ class AboutScreen extends StatelessWidget {
 
   Widget _bodyContent(double fontSize) {
     return Container(
-      color: AppColors.c2Read,
+      // color: AppColors.c2Read,
       padding: EdgeInsets.only(left: 6.0, right: 6, top: 16, bottom: 16),
       child: SingleChildScrollView( // Add SingleChildScrollView here
         child: Column(
@@ -75,7 +75,8 @@ class AboutScreen extends StatelessWidget {
                         "الحمد لله رب العالمين والصلاة والسلام على رسول الله صلى الله عليه وسلم وبعد: \n" +
                             "فهذا تطبيق صحيح الأذكار وهو مأخوذ من مؤلفات",
                         style: TextStyle(
-                            color: AppColors.c4Actionbar, fontSize: fontSize),
+                            // color: AppColors.c4Actionbar,
+                          fontSize: fontSize),
                       ),
                       SizedBox(height: 10), // Space between text
                       Center(
@@ -84,7 +85,7 @@ class AboutScreen extends StatelessWidget {
                             style: TextStyle(
                                 fontFamily: 'alfont',
                                 fontWeight: FontWeight.bold,
-                                color: AppColors.c4Actionbar,
+                                // color: AppColors.c4Actionbar,
                                 fontSize: fontSize * 2),
                           )),
                       SizedBox(height: 10), // Space between text
@@ -92,7 +93,8 @@ class AboutScreen extends StatelessWidget {
                         "كما نرحب بالاقتراحات والملاحظات عبر نموذج التواصل بالموقع.\n" +
                             "ندعو الله عز وجل أن يتقبل منا هذا العمل وينفعنا وإياكم به. رجاءا لا تنسونا من صالح دعائكم وساهموا معنا في نشر تطبيق صحيح الأذكار والأدعية النبوية.",
                         style: TextStyle(
-                            color: AppColors.c4Actionbar, fontSize: fontSize),
+                            // color: AppColors.c4Actionbar,
+                            fontSize: fontSize),
                       ),
                       SizedBox(height: 30), // Space between text
                       Center(

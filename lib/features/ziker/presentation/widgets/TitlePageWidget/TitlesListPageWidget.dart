@@ -11,35 +11,31 @@ import '../../bloc/azkar/setting/SettingBloc.dart';
 import '../../pages/ZikerScreen.dart';
 
 class AzkarListWidget extends StatelessWidget {
-  final List<Ziker> azkarWithoutPrayHaijOmra;
-  final List<Ziker> prayAzkar;
-  final List<Ziker> haijAzkar;
-  final List<Ziker> omraAzkar;
+  final List<Ziker> azkar;
+  final int type;
 
   const AzkarListWidget({
     Key? key,
-    required this.azkarWithoutPrayHaijOmra,
-    required this.prayAzkar,
-    required this.omraAzkar,
-    required this.haijAzkar,
+    required this.azkar,
+    required this.type,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: AppColors.c2Read,
+        // color: AppColors.c2Read,
         child: BlocBuilder<SettingBloc, SettingState>(
           builder: (context, state) {
             if (state is LoadedSettingState) {
               return ListView.builder(
-                itemCount: azkarWithoutPrayHaijOmra.length,
+                itemCount: azkar.length,
                 itemBuilder: (context, index) {
                   return _itemList(context, index, state.setting.fontSize);
                 },
               );
             } else if (state is ErrorSettingState) {}
             return ListView.builder(
-              itemCount: azkarWithoutPrayHaijOmra.length,
+              itemCount: azkar.length,
               itemBuilder: (context, index) {
                 return _itemList(context, index, FontSize.Median);
               },
@@ -54,10 +50,10 @@ class AzkarListWidget extends StatelessWidget {
         child: Material(
           elevation: 2,
           borderRadius: BorderRadius.circular(20), // Corner radius
-          color: AppColors.c6Item,
+          // color: AppColors.c6Item,
           child: ListTile(
             title: Text(
-            '${azkarWithoutPrayHaijOmra[index].name.removeNumberInParentheses()}',
+            '${azkar[index].name.removeNumberInParentheses()}',
             // '${azkarWithoutPrayHaijOmra[index].id}- ${azkarWithoutPrayHaijOmra[index].name.removeNumberInParentheses()}',
             style: TextStyle(
                 fontSize: Utils().fontSize(fontSize),
@@ -65,23 +61,23 @@ class AzkarListWidget extends StatelessWidget {
             ),
             contentPadding: EdgeInsets.symmetric(horizontal: 10),
             onTap: () {
-              final zikerTitle = azkarWithoutPrayHaijOmra[index].name;
+              final zikerTitle = azkar[index].name;
 
-              if (zikerTitle == 'ما كان يقرأ به ﷺ في الصلوات') {
-                showListDialog(context: context,title: zikerTitle,azkar:prayAzkar,onTap: (title){
-                  _goToZikerPage(context, title);
-                });
-              } else if (zikerTitle == 'الحج'){
-                showListDialog(context: context,title: zikerTitle,azkar:haijAzkar,onTap: (title){
-                  _goToZikerPage(context, title);
-                });
-            } else if (zikerTitle == 'العمرة'){
-                showListDialog(context: context,title: zikerTitle,azkar:omraAzkar,onTap: (title){
-                  _goToZikerPage(context, title);
-                });
-            } else {
+            //   if (zikerTitle == 'ما كان يقرأ به ﷺ في الصلوات') {
+            //     showListDialog(context: context,title: zikerTitle,azkar:prayAzkar,onTap: (title){
+            //       _goToZikerPage(context, title);
+            //     });
+            //   } else if (zikerTitle == 'الحج'){
+            //     showListDialog(context: context,title: zikerTitle,azkar:haijAzkar,onTap: (title){
+            //       _goToZikerPage(context, title);
+            //     });
+            // } else if (zikerTitle == 'العمرة'){
+            //     showListDialog(context: context,title: zikerTitle,azkar:omraAzkar,onTap: (title){
+            //       _goToZikerPage(context, title);
+            //     });
+            // } else {
                 _goToZikerPage(context, zikerTitle);
-              }
+              // }
             },
           ),
         ));
@@ -91,7 +87,7 @@ class AzkarListWidget extends StatelessWidget {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => ZikerScreen(zikerTitle: title),
+        builder: (context) => ZikerScreen(zikerTitle: title,type: type,),
       ),
     );
   }

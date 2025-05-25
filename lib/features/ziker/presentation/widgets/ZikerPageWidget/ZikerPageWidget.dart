@@ -23,10 +23,12 @@ import 'SpansTextWidget.dart';
 
 class ZikerPageWidget extends StatefulWidget {
   final Ziker azkar;
+  final int type;
 
   ZikerPageWidget({
     Key? key,
     required this.azkar,
+    required this.type,
   }) : super(key: key);
 
   @override
@@ -61,7 +63,7 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColors.c2Read,
+      // color: AppColors.c2Read,
       child: Column(
         children: <Widget>[
           _ZikerTitle(),
@@ -77,10 +79,11 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
       builder: (context, state) {
         if (state is LoadedSettingState) {
           _fontSize = Utils().fontSize(state.setting.fontSize);
+          print('mossamy: font: $_fontSize');
           _isSound = state.setting.noisy;
           _isViberat = state.setting.vibrate;
           _isTransfer = state.setting.transfer;
-          return _zikerTitleContent(fontSize: _fontSize + 2);
+          return _zikerTitleContent(fontSize: _fontSize + 4);
         }
         return _zikerTitleContent(fontSize: _fontSize);
       },
@@ -92,7 +95,7 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
         padding: const EdgeInsets.only(right: 10, left: 10),
         child: Container(
           decoration: BoxDecoration(
-            color: AppColors.c3,
+            color: AppColors.screenTitleBg,
             borderRadius: BorderRadius.circular(10.0),
           ),
           padding: EdgeInsets.all(8.0),
@@ -100,10 +103,10 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
             child: SpansTextWidget(
               text: widget.azkar.name,
               textAlign: TextAlign.center,
-              referenceColor:AppColors.c4Actionbar,
+              referenceColor:AppColors.screenTitleText,
               style: TextStyle(
                 fontSize: fontSize,
-                color: AppColors.c4Actionbar,
+                color: AppColors.screenTitleText,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -158,7 +161,9 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
                     '${_currentPage + 1} من ${widget.azkar.arr.length}'
                         .replaceArabicNumbers(),
                     style: TextStyle(
-                        fontSize: _fontSize, color: AppColors.c4Actionbar))),
+                        fontSize: _fontSize,
+                        // color: AppColors.c4Actionbar
+                    ))),
           ),
         ));
   }
@@ -198,7 +203,9 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
             child: Text(
                 widget.azkar.arr[_currentPage].no_repeat.replaceArabicString(),
                 style: TextStyle(
-                    fontSize: _fontSize, color: AppColors.c4Actionbar)),
+                    fontSize: _fontSize,
+                    // color: AppColors.c4Actionbar
+                )),
           ),
         ),
       ),
@@ -229,7 +236,7 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
             Navigator.of(dialogContext).pop();
             Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(builder: (_) => MainScreen()),
+              MaterialPageRoute(builder: (_) => MainScreen(type: widget.type,)),
               (route) => false,
             );
           });
@@ -251,7 +258,7 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
       value: widget.azkar.arr[_currentPage].state /
           widget.azkar.arr[_currentPage].no_repeat,
       backgroundColor: Colors.grey[300],
-      valueColor: AlwaysStoppedAnimation<Color>(AppColors.c4Actionbar),
+      // valueColor: AlwaysStoppedAnimation<Color>(AppColors.c4Actionbar),
     );
   }
 
@@ -284,10 +291,10 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
                   child: Text(
                     myObject.isnad.replaceArabicNumbers(),
                     style: TextStyle(
-                      fontSize: _fontSize - 2,
+                      fontSize: _fontSize ,
                       height: 1.6,
                       fontFamily: 'scheherazade',
-                      color: AppColors.c4Actionbar,
+                      // color: AppColors.c4Actionbar,
                     ),
                   ),
                 )
@@ -345,10 +352,10 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
               child: SpansTextWidget(
                 text: title,
                 style: TextStyle(
-                  fontSize: _fontSize + 2,
+                  fontSize: _fontSize + 6,
                   fontFamily: 'scheherazade',
                   height: 1.6,
-                  color: AppColors.c4Actionbar,
+                  // color: AppColors.c4Actionbar,
                   fontWeight: FontWeight.bold,
                 ),
                 textAlign: TextAlign.center,
@@ -359,10 +366,10 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
           SpansTextWidget(
             text: matn,
             style: TextStyle(
-              fontSize: _fontSize,
+              fontSize: _fontSize+4,
               fontFamily: 'scheherazade',
               height: 1.6,
-              color: AppColors.c4Actionbar,
+              // color: AppColors.c4Actionbar,
             ),
           ),
         ],

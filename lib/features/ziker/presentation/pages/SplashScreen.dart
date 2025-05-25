@@ -1,9 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:sahih_azkar/features/ziker/presentation/pages/CategoryScreen.dart';
 
 import '../../../../core/colors.dart';
 import 'MainScreen.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -20,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ()=>Navigator.pushReplacement(context,
             MaterialPageRoute(builder:
                 (context) =>
-                MainScreen()
+                CategoryScreen()
             )
         )
     );
@@ -58,8 +60,8 @@ class _SplashScreenState extends State<SplashScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             // Center horizontally
             children: [
-              Image.asset(
-                'assets/images/ic_launcher.png',
+              SvgPicture.asset(
+                'assets/images/ic_launcher.svg',
                 width: 160,
                 height: 160,
               ),
@@ -69,7 +71,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     'صحيح الأذكار',
                     style: TextStyle(
                       fontSize: 40,
-                      color: AppColors.c4Actionbar,
+                      color: AppColors.primary,
                     ),
                     textAlign: TextAlign.center,
                   ),

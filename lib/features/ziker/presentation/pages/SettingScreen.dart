@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/utils/FontSize.dart';
@@ -46,14 +45,11 @@ class _SettingScreenState extends State<SettingScreen> {
   int _fontSizeType = 2;
   bool isInitialedSize = true; // to initialize setting first time only
 
-
-
   void _updateSetting(Setting newSetting) {
     setState(() {
       setting = newSetting;
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -61,11 +57,11 @@ class _SettingScreenState extends State<SettingScreen> {
         create: (_) => GetIt.instance<PrayerTimesCubit>(),
         child: Directionality(
             textDirection: TextDirection.rtl,
-            child:  Scaffold(
-                  resizeToAvoidBottomInset: false,
-                  appBar: _buildAppbar(context),
-                  body: _buildBody(),
-                )));
+            child: Scaffold(
+              resizeToAvoidBottomInset: false,
+              appBar: _buildAppbar(context),
+              body: _buildBody(),
+            )));
   }
 
   AppBar _buildAppbar(BuildContext context) {
@@ -76,24 +72,9 @@ class _SettingScreenState extends State<SettingScreen> {
           _done();
         },
       ),
-      title: BlocBuilder<SettingBloc, SettingState>(
-        builder: (context, state) {
-          if (state is LoadingSettingState) {
-            // return const Text('الإعدادات');
-          } else if (state is LoadedSettingState) {
-            _initialSetting(state.setting);
-            return Text(
-              'الإعدادات',
-              style: TextStyle(fontSize: Utils().fontSize(_fontSizeType)),
-            );
-          } else if (state is ErrorSettingState) {
-            return Text(
-              'الإعدادات',
-              style: TextStyle(fontSize: Utils().fontSize(FontSize.Median)),
-            );
-          }
-          return const Text('الإعدادات');
-        },
+      title: Text(
+        'الإعدادات',
+        style: TextStyle(fontSize: 24),
       ),
       actions: <Widget>[
         TextButton(

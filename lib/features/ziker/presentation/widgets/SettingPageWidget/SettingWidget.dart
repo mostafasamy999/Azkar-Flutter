@@ -60,7 +60,7 @@ class _SettingWidgetState extends State<SettingWidget> {
 
   Widget _settingWidget(BuildContext context) {
     return Container(
-        color: AppColors.c2Read,
+        color: AppColors.screenTitleText,
         margin: const EdgeInsets.only(top: 6),
         child: SingleChildScrollView(
           padding: const EdgeInsets.only(bottom: 20, right: 6, left: 6),
@@ -168,8 +168,8 @@ class _SettingWidgetState extends State<SettingWidget> {
         toastLength: Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,
         timeInSecForIosWeb: 1,
-        backgroundColor: Color(0xFFF0F4F7),
-        textColor: AppColors.c4Actionbar,
+        backgroundColor: AppColors.screenTitleText,
+        textColor: AppColors.primary,
         fontSize: 16.0
     );
   }
@@ -213,7 +213,7 @@ class _SettingWidgetState extends State<SettingWidget> {
         width: double.infinity,
         alignment: Alignment.center,
         decoration: const BoxDecoration(
-          color: AppColors.c4Actionbar,
+          color: AppColors.primary,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(16.0),
             topRight: Radius.circular(16.0),
@@ -221,7 +221,7 @@ class _SettingWidgetState extends State<SettingWidget> {
         ),
         child: Text(title,
             style: TextStyle(
-              color: Colors.white,
+              color: AppColors.screenTitleText,
               fontSize: Utils().fontSize(_fontSizeType) + 2,
             )));
   }
@@ -229,7 +229,7 @@ class _SettingWidgetState extends State<SettingWidget> {
   Widget _titleSettingPrayNotificationRow(String title) {
     return Container(
         decoration: const BoxDecoration(
-          color: AppColors.c4Actionbar,
+          color: AppColors.primary,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(16.0),
             topRight: Radius.circular(16.0),
@@ -243,12 +243,12 @@ class _SettingWidgetState extends State<SettingWidget> {
               alignment: Alignment.center,
               child: Text(title,
                   style: TextStyle(
-                    color: Colors.white,
+                    color: AppColors.screenTitleText,
                     fontSize: Utils().fontSize(_fontSizeType) + 2,
                   )),
             ),
             Container(
-                color: AppColors.bgReloudColor,
+                color: AppColors.textSecondary,
                 padding: const EdgeInsets.all(4.0),
                 child: GestureDetector(
                     onTap: () {
@@ -263,13 +263,14 @@ class _SettingWidgetState extends State<SettingWidget> {
                             width: 22,
                             height: 22,
                             fit: BoxFit.cover,
+                            color: AppColors.drawerBg1,
                           ),
                         ),
                         Container(
                             padding: const EdgeInsets.only(right: 12),
                             child: Text("تحميل اوقات الصلوات",
                                 style: TextStyle(
-                                  color: Colors.white,
+                                  color: AppColors.drawerBg1,
                                   fontSize: Utils().fontSize(_fontSizeType),
                                 )))
                       ],
@@ -329,21 +330,22 @@ class _SettingWidgetState extends State<SettingWidget> {
 
   Widget _testFontBorerRow() {
     return Container(
-      color: AppColors.c3,
+      color: AppColors.textBg,
       padding: const EdgeInsets.only(top: 6, bottom: 6, right: 8, left: 8),
       alignment: Alignment.centerRight,
       child: Text(
         'بسم الله الرحمن الرحيم',
         style: TextStyle(
             fontSize: Utils().fontSize(setting.fontSize),
-            color: AppColors.c4Actionbar),
+            color: AppColors.primary
+    ),
       ),
     );
   }
 
   Widget _fontRadioRow() {
     return Container(
-      color: AppColors.white,
+      // color: AppColors.screenTitleText,
       padding: const EdgeInsets.only(top: 6, bottom: 6, right: 8, left: 8),
       alignment: Alignment.centerRight,
       child: Row(
@@ -354,7 +356,7 @@ class _SettingWidgetState extends State<SettingWidget> {
 
   Widget _transferSettingRow() {
     return Container(
-      color: AppColors.white,
+      // color: AppColors.screenTitleText,
       padding: const EdgeInsets.only(right: 8, left: 8),
       alignment: Alignment.centerRight,
       child: Row(
@@ -369,7 +371,7 @@ class _SettingWidgetState extends State<SettingWidget> {
 
   Widget _vibrateSettingRow() {
     return Container(
-      color: AppColors.white,
+      // color: AppColors.screenTitleText,
       padding: const EdgeInsets.only(right: 8, left: 8),
       alignment: Alignment.centerRight,
       child: Row(
@@ -385,7 +387,7 @@ class _SettingWidgetState extends State<SettingWidget> {
 
   Widget _noiseSettingRow() {
     return Container(
-      color: AppColors.white,
+      color: AppColors.screenTitleText,
       padding: const EdgeInsets.only(right: 8, left: 8),
       alignment: Alignment.centerRight,
       child: Row(
@@ -401,7 +403,7 @@ class _SettingWidgetState extends State<SettingWidget> {
 
   Widget _walkUpNotifySettingRow() {
     return Container(
-      color: AppColors.white,
+      color: AppColors.screenTitleText,
       padding: const EdgeInsets.only(right: 8, left: 8),
       alignment: Alignment.centerRight,
       child: Column(
@@ -421,7 +423,7 @@ class _SettingWidgetState extends State<SettingWidget> {
 
   Widget _fagrNotifySettingRow() {
     return Container(
-      color: AppColors.white,
+      // color: AppColors.screenTitleText,
       padding: const EdgeInsets.only(right: 8, left: 8),
       alignment: Alignment.centerRight,
       child: Column(
@@ -441,7 +443,7 @@ class _SettingWidgetState extends State<SettingWidget> {
 
   Widget _duhrNotifySettingRow() {
     return Container(
-      color: AppColors.white,
+      // color: AppColors.screenTitleText,
       padding: const EdgeInsets.only(right: 8, left: 8),
       alignment: Alignment.centerRight,
       child: Column(
@@ -461,7 +463,7 @@ class _SettingWidgetState extends State<SettingWidget> {
 
   Widget _aserNotifySettingRow() {
     return Container(
-      color: AppColors.white,
+      // color: AppColors.screenTitleText,
       padding: const EdgeInsets.only(right: 8, left: 8),
       alignment: Alignment.centerRight,
       child: Column(
@@ -481,7 +483,7 @@ class _SettingWidgetState extends State<SettingWidget> {
 
   Widget _magrepNotifySettingRow() {
     return Container(
-      color: AppColors.white,
+      // color: AppColors.screenTitleText,
       padding: const EdgeInsets.only(right: 8, left: 8),
       alignment: Alignment.centerRight,
       child: Column(
@@ -501,7 +503,7 @@ class _SettingWidgetState extends State<SettingWidget> {
 
   Widget _ishaaNotifySettingRow() {
     return Container(
-      color: AppColors.white,
+      // color: AppColors.screenTitleText,
       padding: const EdgeInsets.only(right: 8, left: 8),
       alignment: Alignment.centerRight,
       child: Column(
@@ -521,7 +523,7 @@ class _SettingWidgetState extends State<SettingWidget> {
 
   Widget _sleepNotifySettingRow() {
     return Container(
-      color: AppColors.white,
+      // color: AppColors.screenTitleText,
       padding: const EdgeInsets.only(right: 8, left: 8),
       alignment: Alignment.centerRight,
       child: Column(
@@ -541,7 +543,7 @@ class _SettingWidgetState extends State<SettingWidget> {
 
   Widget _morningNotifySettingRow() {
     return Container(
-      color: AppColors.white,
+      // color: AppColors.screenTitleText,
       padding: const EdgeInsets.only(right: 8, left: 8),
       alignment: Alignment.centerRight,
       child: Column(
@@ -561,7 +563,7 @@ class _SettingWidgetState extends State<SettingWidget> {
 
   Widget _eveningNotifySettingRow() {
     return Container(
-      color: AppColors.white,
+      color: AppColors.screenTitleText,
       padding: const EdgeInsets.only(right: 8, left: 8),
       alignment: Alignment.centerRight,
       child: Column(
@@ -584,7 +586,8 @@ class _SettingWidgetState extends State<SettingWidget> {
       str,
       style: TextStyle(
           fontSize: Utils().fontSize(_fontSizeType),
-          color: AppColors.c4Actionbar),
+          color: AppColors.primary
+    ),
     );
   }
 
@@ -592,7 +595,7 @@ class _SettingWidgetState extends State<SettingWidget> {
     return Container(
       height: 4,
       decoration: const BoxDecoration(
-        color: AppColors.c4Actionbar, // Set the color here
+        color: AppColors.primary, // Set the color here
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(16.0), // Adjust the radius as needed
           bottomRight: Radius.circular(16.0),
@@ -603,7 +606,7 @@ class _SettingWidgetState extends State<SettingWidget> {
 
   Widget _spaceBetween() {
     return Container(
-      color: AppColors.c4Actionbar, // Set the color here
+      color: AppColors.primary, // Set the color here
       height: 1,
     );
   }
@@ -684,8 +687,12 @@ class _SettingWidgetState extends State<SettingWidget> {
           // BlocProvider.of<SettingBloc>(context)
           //     .add(UpdateSettingEvent(setting: setting));
         },
-        activeTrackColor: AppColors.switch_track_selector,
-        activeColor: AppColors.c4Actionbar,
+        activeTrackColor: AppColors.primary.withOpacity(0.3),    // Light teal track
+        activeColor: AppColors.primary,                          // Dark teal thumb
+
+        // Inactive colors (when switch is OFF)
+        inactiveTrackColor: AppColors.textSecondary.withOpacity(0.3), // Light gray track
+        inactiveThumbColor: AppColors.textSecondary,              // Dark Teal
       ),
     );
   }
@@ -703,8 +710,12 @@ class _SettingWidgetState extends State<SettingWidget> {
           // BlocProvider.of<SettingBloc>(context)
           //     .add(UpdateSettingEvent(setting: setting));
         },
-        activeTrackColor: AppColors.switch_track_selector,
-        activeColor: AppColors.c4Actionbar,
+        activeTrackColor: AppColors.primary.withOpacity(0.3),    // Light teal track
+        activeColor: AppColors.primary,                          // Dark teal thumb
+
+        // Inactive colors (when switch is OFF)
+        inactiveTrackColor: AppColors.textSecondary.withOpacity(0.3), // Light gray track
+        inactiveThumbColor: AppColors.textSecondary,
       ),
     );
   }
@@ -722,8 +733,12 @@ class _SettingWidgetState extends State<SettingWidget> {
           // BlocProvider.of<SettingBloc>(context)
           //     .add(UpdateSettingEvent(setting: setting));
         },
-        activeTrackColor: AppColors.switch_track_selector,
-        activeColor: AppColors.c4Actionbar,
+        activeTrackColor: AppColors.primary.withOpacity(0.3),    // Light teal track
+        activeColor: AppColors.primary,                          // Dark teal thumb
+
+        // Inactive colors (when switch is OFF)
+        inactiveTrackColor: AppColors.textSecondary.withOpacity(0.3), // Light gray track
+        inactiveThumbColor: AppColors.textSecondary,
       ),
     );
   }
@@ -739,8 +754,12 @@ class _SettingWidgetState extends State<SettingWidget> {
           });
           widget.onSettingChanged(setting);
         },
-        activeTrackColor: AppColors.switch_track_selector,
-        activeColor: AppColors.c4Actionbar,
+        activeTrackColor: AppColors.primary.withOpacity(0.3),    // Light teal track
+        activeColor: AppColors.primary,                          // Dark teal thumb
+
+        // Inactive colors (when switch is OFF)
+        inactiveTrackColor: AppColors.textSecondary.withOpacity(0.3), // Light gray track
+        inactiveThumbColor: AppColors.textSecondary,
       ),
     );
   }
@@ -756,8 +775,12 @@ class _SettingWidgetState extends State<SettingWidget> {
           });
           widget.onSettingChanged(setting);
         },
-        activeTrackColor: AppColors.switch_track_selector,
-        activeColor: AppColors.c4Actionbar,
+        activeTrackColor: AppColors.primary.withOpacity(0.3),    // Light teal track
+        activeColor: AppColors.primary,                          // Dark teal thumb
+
+        // Inactive colors (when switch is OFF)
+        inactiveTrackColor: AppColors.textSecondary.withOpacity(0.3), // Light gray track
+        inactiveThumbColor: AppColors.textSecondary,
       ),
     );
   }
@@ -773,8 +796,12 @@ class _SettingWidgetState extends State<SettingWidget> {
           });
           widget.onSettingChanged(setting);
         },
-        activeTrackColor: AppColors.switch_track_selector,
-        activeColor: AppColors.c4Actionbar,
+        activeTrackColor: AppColors.primary.withOpacity(0.3),    // Light teal track
+        activeColor: AppColors.primary,                          // Dark teal thumb
+
+        // Inactive colors (when switch is OFF)
+        inactiveTrackColor: AppColors.textSecondary.withOpacity(0.3), // Light gray track
+        inactiveThumbColor: AppColors.textSecondary,
       ),
     );
   }
@@ -790,8 +817,12 @@ class _SettingWidgetState extends State<SettingWidget> {
           });
           widget.onSettingChanged(setting);
         },
-        activeTrackColor: AppColors.switch_track_selector,
-        activeColor: AppColors.c4Actionbar,
+        activeTrackColor: AppColors.primary.withOpacity(0.3),    // Light teal track
+        activeColor: AppColors.primary,                          // Dark teal thumb
+
+        // Inactive colors (when switch is OFF)
+        inactiveTrackColor: AppColors.textSecondary.withOpacity(0.3), // Light gray track
+        inactiveThumbColor: AppColors.textSecondary,
       ),
     );
   }
@@ -807,8 +838,12 @@ class _SettingWidgetState extends State<SettingWidget> {
           });
           widget.onSettingChanged(setting);
         },
-        activeTrackColor: AppColors.switch_track_selector,
-        activeColor: AppColors.c4Actionbar,
+        activeTrackColor: AppColors.primary.withOpacity(0.3),    // Light teal track
+        activeColor: AppColors.primary,                          // Dark teal thumb
+
+        // Inactive colors (when switch is OFF)
+        inactiveTrackColor: AppColors.textSecondary.withOpacity(0.3), // Light gray track
+        inactiveThumbColor: AppColors.textSecondary,
       ),
     );
   }
@@ -824,8 +859,12 @@ class _SettingWidgetState extends State<SettingWidget> {
           });
           widget.onSettingChanged(setting);
         },
-        activeTrackColor: AppColors.switch_track_selector,
-        activeColor: AppColors.c4Actionbar,
+        activeTrackColor: AppColors.primary.withOpacity(0.3),    // Light teal track
+        activeColor: AppColors.primary,                          // Dark teal thumb
+
+        // Inactive colors (when switch is OFF)
+        inactiveTrackColor: AppColors.textSecondary.withOpacity(0.3), // Light gray track
+        inactiveThumbColor: AppColors.textSecondary,
       ),
     );
   }
@@ -841,8 +880,12 @@ class _SettingWidgetState extends State<SettingWidget> {
           });
           widget.onSettingChanged(setting);
         },
-        activeTrackColor: AppColors.switch_track_selector,
-        activeColor: AppColors.c4Actionbar,
+        activeTrackColor: AppColors.primary.withOpacity(0.3),    // Light teal track
+        activeColor: AppColors.primary,                          // Dark teal thumb
+
+        // Inactive colors (when switch is OFF)
+        inactiveTrackColor: AppColors.textSecondary.withOpacity(0.3), // Light gray track
+        inactiveThumbColor: AppColors.textSecondary,
       ),
     );
   }
@@ -858,8 +901,12 @@ class _SettingWidgetState extends State<SettingWidget> {
           });
           widget.onSettingChanged(setting);
         },
-        activeTrackColor: AppColors.switch_track_selector,
-        activeColor: AppColors.c4Actionbar,
+        activeTrackColor: AppColors.primary.withOpacity(0.3),    // Light teal track
+        activeColor: AppColors.primary,                          // Dark teal thumb
+
+        // Inactive colors (when switch is OFF)
+        inactiveTrackColor: AppColors.textSecondary.withOpacity(0.3), // Light gray track
+        inactiveThumbColor: AppColors.textSecondary,
       ),
     );
   }
@@ -875,8 +922,12 @@ class _SettingWidgetState extends State<SettingWidget> {
           });
           widget.onSettingChanged(setting);
         },
-        activeTrackColor: AppColors.switch_track_selector,
-        activeColor: AppColors.c4Actionbar,
+        activeTrackColor: AppColors.primary.withOpacity(0.3),    // Light teal track
+        activeColor: AppColors.primary,                          // Dark teal thumb
+
+        // Inactive colors (when switch is OFF)
+        inactiveTrackColor: AppColors.textSecondary.withOpacity(0.3), // Light gray track
+        inactiveThumbColor: AppColors.textSecondary,
       ),
     );
   }
@@ -1022,7 +1073,7 @@ class _SettingWidgetState extends State<SettingWidget> {
             child: Icon(
               Icons.edit,
               size: 24,
-              color: AppColors.c4Actionbar,
+              color: AppColors.primary,
             ),
           ),
         ),
@@ -1045,7 +1096,7 @@ class _SettingWidgetState extends State<SettingWidget> {
             child: Icon(
               Icons.edit,
               size: 24,
-              color: AppColors.c4Actionbar,
+              color: AppColors.primary,
             ),
           ),
         ),
@@ -1068,7 +1119,7 @@ class _SettingWidgetState extends State<SettingWidget> {
             child: Icon(
               Icons.edit,
               size: 24,
-              color: AppColors.c4Actionbar,
+              color: AppColors.primary,
             ),
           ),
         ),
@@ -1091,7 +1142,7 @@ class _SettingWidgetState extends State<SettingWidget> {
             child: Icon(
               Icons.edit,
               size: 24,
-              color: AppColors.c4Actionbar,
+              color: AppColors.primary,
             ),
           ),
         ),
@@ -1114,7 +1165,7 @@ class _SettingWidgetState extends State<SettingWidget> {
             child: Icon(
               Icons.edit,
               size: 24,
-              color: AppColors.c4Actionbar,
+              color: AppColors.primary,
             ),
           ),
         ),
@@ -1137,7 +1188,7 @@ class _SettingWidgetState extends State<SettingWidget> {
             child: Icon(
               Icons.edit,
               size: 24,
-              color: AppColors.c4Actionbar,
+              color: AppColors.primary,
             ),
           ),
         ),
@@ -1160,7 +1211,7 @@ class _SettingWidgetState extends State<SettingWidget> {
             child: Icon(
               Icons.edit,
               size: 24,
-              color: AppColors.c4Actionbar,
+              color: AppColors.primary,
             ),
           ),
         ),
@@ -1183,7 +1234,7 @@ class _SettingWidgetState extends State<SettingWidget> {
             child: Icon(
               Icons.edit,
               size: 24,
-              color: AppColors.c4Actionbar,
+              color: AppColors.primary,
             ),
           ),
         ),
@@ -1206,7 +1257,7 @@ class _SettingWidgetState extends State<SettingWidget> {
             child: Icon(
               Icons.edit,
               size: 24,
-              color: AppColors.c4Actionbar,
+              color: AppColors.primary,
             ),
           ),
         ),

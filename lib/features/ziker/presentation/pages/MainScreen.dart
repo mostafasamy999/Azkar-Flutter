@@ -14,36 +14,23 @@ import '../widgets/titlePageWidget/message_display_widget.dart';
 import 'ZikerScreen.dart';
 
 class MainScreen extends StatefulWidget {
-  final String? title;
+  final String? title; // when open from notification
+  final int type;
 
-  MainScreen({super.key, this.title});
+  MainScreen({super.key, this.title, required this.type});
 
   @override
-  _MyHomePageState createState() => _MyHomePageState(title);
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MainScreen> {
   GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey();
-  final String? title;
 
-  _MyHomePageState(this.title);
 
-  @override
-  void initState() {
-    super.initState();
 
-    _initializeNotifications();
-  }
-
-  void _initializeNotifications() async {
-    NotificationHelper.requestPermissions();
-    NotificationHelper.updatePrayersTime(context);
-    _handleOnClickNotificationEvent(title);
-  }
 
   @override
   Widget build(BuildContext context) {
-    checkForUpdateAndShowDialog(context);
     return Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
@@ -53,28 +40,10 @@ class _MyHomePageState extends State<MainScreen> {
   }
 
   AppBar _appBar() => AppBar(
-      title: BlocBuilder<AzkarBloc, AzkarState>(
-        builder: (context, state) {
-          if (state is LoadedAzkarState) {
-            return BlocBuilder<SettingBloc, SettingState>(
-              builder: (context, state) {
-                if (state is LoadedSettingState) {
-                  return Text(
-                    'صحيح الأذكار',
-                    style: TextStyle(
-                        fontSize: Utils().fontSize(state.setting.fontSize)),
-                  );
-                }
-
-                return Text(
-                  'صحيح الأذكار',
-                  style: TextStyle(fontSize: Utils().fontSize(FontSize.Median)),
-                );
-              },
-            );
-          } else if (state is ErrorAzkarState) {}
-          return const Text('صحيح الأذكار');
-        },
+      title:  Text(
+        getTitle(widget.type),
+        style: TextStyle(
+            fontSize: 24),
       ),
       leading: IconButton(
           icon: Icon(Icons.dehaze),
@@ -89,11 +58,12 @@ class _MyHomePageState extends State<MainScreen> {
   Widget _drawerAndBody() {
     return Scaffold(
         key: _scaffoldKey,
-        body: _buildBody(),
         drawer: const Opacity(
-          opacity: 0.7,
+          opacity: 0.8,
           child: DrawerWidget(),
-        ));
+        ),
+      body: _buildBody(),
+       );
   }
 
   Widget _buildBody() {
@@ -104,13 +74,34 @@ class _MyHomePageState extends State<MainScreen> {
           if (state is LoadingAzkarState) {
             return LoadingWidget();
           } else if (state is LoadedAzkarState) {
-            return Container(
-                child: AzkarListWidget(
-              azkarWithoutPrayHaijOmra: state.azkarWithoutPray,
-              prayAzkar: state.pryaAzkar,
-              haijAzkar: state.haijAzkar,
-              omraAzkar: state.omraAzkar,
-            ));
+            if (widget.type == 1) {
+              return Container(
+                  child: AzkarListWidget(
+                azkar: state.azkarWithoutPray,
+                type: widget.type,
+              ));
+            }
+            if (widget.type == 2) {
+              return Container(
+                  child: AzkarListWidget(
+                azkar: state.pryaAzkar,
+                type: widget.type,
+              ));
+            }
+            if (widget.type == 3) {
+              return Container(
+                  child: AzkarListWidget(
+                azkar: state.haijAzkar,
+                type: widget.type,
+              ));
+            }
+            if (widget.type == 4) {
+              return Container(
+                  child: AzkarListWidget(
+                azkar: state.omraAzkar,
+                type: widget.type,
+              ));
+            }
           } else if (state is ErrorAzkarState) {
             return MessageDisplayWidget(message: state.message);
           }
@@ -120,15 +111,5 @@ class _MyHomePageState extends State<MainScreen> {
     );
   }
 
-  void _handleOnClickNotificationEvent(String? title) {
-    if (title == null) return;
-    if (title == 1) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => ZikerScreen(zikerTitle: title),
-        ),
-      );
-    }
-  }
+
 }

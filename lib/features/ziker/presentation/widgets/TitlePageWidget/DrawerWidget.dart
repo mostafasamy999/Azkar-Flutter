@@ -20,51 +20,51 @@ class DrawerWidget extends StatelessWidget {
     return Drawer(
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(topRight: Radius.circular(0))),
-        width: 260,
+        width: 220,
         child: Container(
-          color: AppColors.c1Drawer,
+          color: AppColors.drawerBg1,
           child: ListView(padding: EdgeInsets.zero, children: [
             _buildHeader(),
             _buildFirstListTile(
               'assets/images/ic_menu.svg',
               'الأذكار',
-              AppColors.c4Actionbar,
+              // AppColors.c4Actionbar,
             ),
             _buildListTileSVG(
               context,
               'assets/images/baseline_settings_24.svg',
               'الإعدادات',
-              AppColors.white,
+              // AppColors.white,
             ),
             _buildListTileSVG(
               context,
               'assets/images/baseline_error_24_white.svg',
-              'عن التطبيق',
-              AppColors.white,
+              'عن التطبيق'
+              // AppColors.white,
             ),
             _buildListTileIcon(
               context,
               Icons.back_hand,
               'وصيتي',
-              AppColors.white,
+              // AppColors.white,
             ),
             _buildListTileSVG(
               context,
               'assets/images/shar.svg',
               'مشاركة التطبيق',
-              AppColors.white,
+              // AppColors.white,
             ),
             _buildListTileOurValue(
               context,
               Icons.star,
-              'تقييم صحيح الأذكار',
-              Colors.yellow,
+              'تقييم صحيح الأذكار'
+              // Colors.yellow,
             ),
             _buildListTileJpg(
               context,
               'assets/images/icon_ganna.jpg',
               'من أسباب دخول الجنة',
-              AppColors.white,
+              // AppColors.white,
             ),
           ]),
         ));
@@ -73,23 +73,23 @@ class DrawerWidget extends StatelessWidget {
   Widget _buildHeader() {
     return Container(
       padding: const EdgeInsets.only(left: 14, bottom: 14, top: 14, right: 14),
-      decoration: BoxDecoration(color: AppColors.c4Actionbar),
+      // decoration: BoxDecoration(color: AppColors.c4Actionbar),
       child: const Text(
         "ۛ ּڝــحۡــۑْۧــحۡ اﻷذڪــٰٱڕ",
         textAlign: TextAlign.center,
         style: TextStyle(
           fontFamily: 'typesetting',
           color: Colors.white,
-          fontSize: 40,
+          fontSize: 56,
         ),
       ),
     );
   }
 
-  Widget _buildFirstListTile(String asset, String title, Color textColor) {
+  Widget _buildFirstListTile(String asset, String title, ) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: AppColors.iconBackground,
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: ListTile(
@@ -97,9 +97,10 @@ class DrawerWidget extends StatelessWidget {
           asset,
           width: 16.0,
           height: 16.0,
+          color: AppColors.azkarColor,
         ),
-        title: Text(title),
-        textColor: textColor,
+        title: Text(title,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24),),
+        textColor: AppColors.azkarColor,
         onTap: () {
           //   Handle onTap
         },
@@ -108,16 +109,16 @@ class DrawerWidget extends StatelessWidget {
   }
 
   Widget _buildListTileSVG(
-      BuildContext context, String asset, String title, Color contentColor) {
+      BuildContext context, String asset, String title) {
     return ListTile(
       leading: SvgPicture.asset(
         asset,
         width: 24.0,
         height: 24.0,
-        colorFilter: ColorFilter.mode(contentColor, BlendMode.srcIn),
+        colorFilter: ColorFilter.mode(AppColors.iconBackground, BlendMode.srcIn),
       ),
-      title: Text(title),
-      textColor: contentColor,
+      title: Text(title,style: TextStyle(fontSize: 20),),
+      textColor: AppColors.iconBackground,
       onTap: () {
         if (Scaffold.of(context).isDrawerOpen) {
           Navigator.of(context).pop();
@@ -145,15 +146,15 @@ class DrawerWidget extends StatelessWidget {
   }
 
   Widget _buildListTileIcon(
-      BuildContext context, IconData asset, String title, Color contentColor) {
+      BuildContext context, IconData asset, String title) {
     return ListTile(
       leading: Icon(
         asset,
         size: 24,
-        color: contentColor,
+        color: AppColors.iconBackground,
       ),
-      title: Text(title),
-      textColor: contentColor,
+      title: Text(title,style: TextStyle(fontSize: 20)),
+      textColor: AppColors.iconBackground,
       onTap: () {
         if (Scaffold.of(context).isDrawerOpen) {
           Navigator.of(context).pop();
@@ -189,7 +190,7 @@ class DrawerWidget extends StatelessWidget {
   }
 
   Widget _buildListTileJpg(
-      BuildContext context, String asset, String title, Color contentColor) {
+      BuildContext context, String asset, String title) {
     return ListTile(
       leading: ClipRRect(
           borderRadius: BorderRadius.circular(12.0), // Set the corner radius
@@ -199,8 +200,8 @@ class DrawerWidget extends StatelessWidget {
             height: 40.0,
             fit: BoxFit.cover,
           )),
-      title: Text(title),
-      textColor: contentColor,
+      title: Text(title,style: TextStyle(fontSize: 20)),
+      textColor: AppColors.iconBackground,
       onTap: () {
         if (Scaffold.of(context).isDrawerOpen) {
           Navigator.of(context).pop();
@@ -211,15 +212,15 @@ class DrawerWidget extends StatelessWidget {
   }
 
   Widget _buildListTileOurValue(
-      BuildContext context, IconData icon, String title, Color contentColor) {
+      BuildContext context, IconData icon, String title) {
     return ListTile(
       leading: Icon(
         icon, // Pass the IconData here
         size: 40.0, // Set size of the icon
-        color: contentColor, // Set color of the icon
+        color: AppColors.secondary, // Set color of the icon
       ),
-      title: Text(title),
-      textColor: Colors.white,
+      title: Text(title,style: TextStyle(fontSize: 20)),
+      textColor: AppColors.iconBackground,
       onTap: () {
         if (Scaffold.of(context).isDrawerOpen) {
           Navigator.of(context).pop();

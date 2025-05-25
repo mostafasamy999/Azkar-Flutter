@@ -302,9 +302,11 @@ class NotificationHelper {
 
   static void updatePrayersTime(BuildContext context) async {
     try {
+      print('mossamy:init');
       final locationData = await LocationUtils.getCurrentCityAndCountry();
       final city = locationData['city'] ?? 'Cairo';
       final country = locationData['country'] ?? 'Egypt';
+      print('mossamy:notification class updatePrayersTime');
 
       // 1. Fetch Prayer Times from Usecase
       final prayerTimes = await sl<GetPrayerTimesUsecase>().call(city, country);
