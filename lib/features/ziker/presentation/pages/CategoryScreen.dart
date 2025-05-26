@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:sahih_azkar/core/colors.dart';
 import 'package:sahih_azkar/features/ziker/presentation/pages/MainScreen.dart';
 
+import '../../../../core/utils/Utils.dart';
 import '../../../../core/utils/notification_helper.dart';
 import '../widgets/TitlePageWidget/DrawerWidget.dart';
 import 'ZikerScreen.dart';
@@ -62,7 +63,7 @@ class CategoryScreen extends StatelessWidget {
               childAspectRatio: 0.95,
               children: [
                 _buildIslamicCard(
-                    title: 'الأذكار اليومية',
+                    title: getTitle(1),
                     icon: Icons.auto_stories,
                     gradient: LinearGradient(
                       colors: [Color(0xFF4CAF50), Color(0xFF2E7D32)],
@@ -80,7 +81,7 @@ class CategoryScreen extends StatelessWidget {
                       );
                     }),
                 _buildIslamicCardPray(
-                    title: 'القراءه في الصلوات',
+                    title: getTitle(2),
                     icon: Icons.mosque,
                     gradient: LinearGradient(
                       colors: [Color(0xFF2196F3), Color(0xFF1565C0)],
@@ -94,7 +95,7 @@ class CategoryScreen extends StatelessWidget {
                               builder: (context) => MainScreen(type: 2)));
                     }),
                 _buildIslamicCard(
-                    title: 'دليل الحج',
+                    title: getTitle(3),
                     icon: Icons.place,
                     gradient: LinearGradient(
                       colors: [Color(0xFF9C27B0), Color(0xFF6A1B9A)],
@@ -108,7 +109,7 @@ class CategoryScreen extends StatelessWidget {
                               builder: (context) => MainScreen(type: 3)));
                     }),
                 _buildIslamicCard(
-                    title: 'دليل العمرة',
+                    title: getTitle(4),
                     icon: Icons.location_city,
                     gradient: LinearGradient(
                       colors: [Color(0xFFFF9800), Color(0xFFE65100)],

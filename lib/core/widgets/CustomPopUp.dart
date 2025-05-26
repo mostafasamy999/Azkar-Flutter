@@ -35,7 +35,7 @@ class CustomPopupWidget extends StatelessWidget {
               SvgPicture.asset(
                 'assets/images/ic_baseline_check_circle_24.svg',
                 height: 72,
-                // color: AppColors.c4Actionbar,
+                color: AppColors.primary,
               ),
             ],
           ),
@@ -51,12 +51,12 @@ class CustomPopupWidget extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  // color: AppColors.c4Actionbar,
+                  color: AppColors.primary,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: const Text(
                   "العودة الى القائمة الرئيسية",
-                  style: TextStyle(fontSize: 16, color: Colors.white),
+                  style: TextStyle(fontSize: 20, color: Colors.white),
                   textAlign: TextAlign.center,
                 ),
               )),
@@ -68,13 +68,13 @@ class CustomPopupWidget extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                // color: AppColors.cCancelBG,
+                color: AppColors.textSecondary,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: const Text(
+              child: Text(
                 "الغاء",
-                style: TextStyle(fontSize: 16,
-                    // color: AppColors.c4Actionbar
+                style: TextStyle(fontSize: 20,
+                    color: AppColors.screenTitleText
                   ),
                 textAlign: TextAlign.center,
               ),

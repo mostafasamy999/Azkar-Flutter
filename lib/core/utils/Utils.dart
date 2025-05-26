@@ -4,6 +4,10 @@ import 'FontSize.dart';
 class Utils {
   Utils._privateConstructor();
 
+ final  double small = 20;
+ final  double mediam = 22;
+ final  double large = 24;
+
   static final Utils _instance = Utils._privateConstructor();
 
   factory Utils() {
@@ -14,20 +18,20 @@ class Utils {
     if (input is int) {
       switch (input) {
         case 1:
-          return 18;
+          return small;
         case 2:
-          return 20;
+          return mediam;
         case 3:
-          return 22;
+          return large;
       }
     } else if (input is FontSize) {
       switch (input) {
         case FontSize.Small :
-          return 18;
+          return small;
         case FontSize.Median:
-          return 20;
+          return mediam;
         case FontSize.Large:
-          return 22;
+          return large;
       }
     }
     return 20;
@@ -87,7 +91,7 @@ extension RemoveNumberInParentheses on String {
 
 String getTitle(int type) {
   if(type == 1)return 'الأذكار اليومية';
-  else if (type == 2)return 'قرائات الصلوات';
+  else if (type == 2)return 'القراءه في الصلوات';
   else if (type == 3)return 'دليل الحج';
   else return 'دليل العمرة';
 }

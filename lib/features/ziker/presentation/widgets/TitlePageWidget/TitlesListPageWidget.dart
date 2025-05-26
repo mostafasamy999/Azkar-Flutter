@@ -50,12 +50,13 @@ class AzkarListWidget extends StatelessWidget {
         child: Material(
           elevation: 2,
           borderRadius: BorderRadius.circular(20), // Corner radius
-          // color: AppColors.c6Item,
+          color: azkar[index].isEmportant? AppColors.drawerBg5: AppColors.cardBackground,
           child: ListTile(
             title: Text(
             '${azkar[index].name.removeNumberInParentheses()}',
-            // '${azkarWithoutPrayHaijOmra[index].id}- ${azkarWithoutPrayHaijOmra[index].name.removeNumberInParentheses()}',
-            style: TextStyle(
+            // '${azkar[index].id}- ${azkar[index].name.removeNumberInParentheses()}',
+            textAlign: azkar[index].isEmportant?TextAlign.center:TextAlign.start,
+              style: TextStyle(
                 fontSize: Utils().fontSize(fontSize),
               ),
             ),

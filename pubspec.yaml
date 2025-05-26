@@ -76,3 +76,6 @@ flutter:
     - family: scheherazade
       fonts:
         - asset: fonts/ScheherazadeNew-Regular.ttf
+    - family: scheherazade-medium
+      fonts:
+        - asset: fonts/ScheherazadeNew-Medium.ttf

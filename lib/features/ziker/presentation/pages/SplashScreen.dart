@@ -63,11 +63,11 @@ class _SplashScreenState extends State<SplashScreen> {
                      fontFamily: 'alfont',
                      fontWeight: FontWeight.bold,
                      color: AppColors.primary,
-                     fontSize: screenWidth * 10 /100),
+                     fontSize: screenWidth * 12 /100),
                ),
-              SizedBox(height: screenWidth * 4 /100), // Add some spacing
+              SizedBox(height: screenWidth * 6 /100), // Add some spacing
               SpinKitCircle(
-                size: screenWidth * 14 /100,
+                size: screenWidth * 18 /100,
                 itemBuilder: (BuildContext context, int index) {
                   return DecoratedBox(
                     decoration: BoxDecoration(

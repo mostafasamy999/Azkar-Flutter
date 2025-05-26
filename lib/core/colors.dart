@@ -53,7 +53,7 @@ class AppColors {
   static const Color drawerBg2 = Color(0xFF263238);      // Blue Grey Dark
   static const Color drawerBg3 = Color(0xFF1B5E20);      // Dark Green
   static const Color drawerBg4 = Color(0xFF424242);      // Dark Grey
-  static const Color drawerBg5 = Color(0xFF2E7D32);      // Forest Green
+  static const Color drawerBg5 = Color(0x902E7D32);      // Forest Green
 
   static const Color screenTitleBg = Color(0xD300695C);    // Your primary teal
   static const Color screenTitleText = Color(0xFFFFFFFF);  // White text

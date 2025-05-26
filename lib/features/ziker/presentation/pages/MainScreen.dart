@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MainScreen> {
         textDirection: TextDirection.rtl,
         child: Scaffold(
           appBar: _appBar(),
-          body: _drawerAndBody(),
+          body: _buildBody(),
         ));
   }
 
@@ -45,26 +45,7 @@ class _MyHomePageState extends State<MainScreen> {
         style: TextStyle(
             fontSize: 24),
       ),
-      leading: IconButton(
-          icon: Icon(Icons.dehaze),
-          onPressed: () {
-            if (_scaffoldKey.currentState!.isDrawerOpen == false) {
-              _scaffoldKey.currentState!.openDrawer();
-            } else {
-              _scaffoldKey.currentState!.openEndDrawer();
-            }
-          }));
-
-  Widget _drawerAndBody() {
-    return Scaffold(
-        key: _scaffoldKey,
-        drawer: const Opacity(
-          opacity: 0.8,
-          child: DrawerWidget(),
-        ),
-      body: _buildBody(),
-       );
-  }
+  );
 
   Widget _buildBody() {
     return Padding(
