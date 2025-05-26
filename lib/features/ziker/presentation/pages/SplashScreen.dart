@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:sahih_azkar/features/ziker/presentation/pages/CategoryScreen.dart';
 
 import '../../../../core/colors.dart';
@@ -39,8 +40,9 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Container(
+      body:SingleChildScrollView(child:  Container(
         color: Colors.white,
         child: Center(
           child:AnimatedOpacity(
@@ -54,25 +56,36 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               Image.asset(
                 'assets/images/ic_launcher.png',
-                width: 260,
-                height: 260,
+                width: screenWidth * 65 /100,
+                height: screenWidth * 65 /100,
                 // fit: BoxFit.cover,
               ),
 
-              SizedBox(height: 100), // Add some spacing
+              SizedBox(height: screenWidth * 20 /100), // Add some spacing
                Text(
-                    'لفضيلة الدكتور وليد الرفاعي',
+                    'لفضيلة الدكتور / وليد الرفاعي',
+                 textAlign: TextAlign.center,
                  style: TextStyle(
                      fontFamily: 'alfont',
                      fontWeight: FontWeight.bold,
                      // color: AppColors.c4Actionbar,
-                     fontSize: 60),
-               )
-
+                     fontSize: screenWidth * 40 /100),
+               ),
+              SpinKitCircle(
+                size: screenWidth * 0.2,
+                itemBuilder: (BuildContext context, int index) {
+                  return DecoratedBox(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: AppColors.primary,
+                    ),
+                  );
+                },
+              ),
             ],
           ),
         ),
       ),
-    ));
+    ),));
   }
 }
