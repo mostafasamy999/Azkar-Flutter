@@ -18,37 +18,31 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // Timer(Duration(seconds: 3),
-    //         ()=>Navigator.pushReplacement(context,
-    //         MaterialPageRoute(builder:
-    //             (context) =>
-    //             CategoryScreen()
-    //         )
-    //     )
-    // );
+    Timer(Duration(seconds: 3),
+            ()=>Navigator.pushReplacement(context,
+            MaterialPageRoute(builder:
+                (context) =>
+                CategoryScreen()
+            )
+        )
+    );
   }
-  bool _startAnimation = false; // Flag to start the animation
-  late Timer _timer;
 
 
 
-  @override
-  void dispose() {
-    _timer.cancel(); // Cancel the timer when the widget is disposed
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+    final screenHigh = MediaQuery.of(context).size.height;
     return Scaffold(
-      body:SingleChildScrollView(child:  Container(
+      body:
+      SingleChildScrollView(child:
+      Container(
         color: Colors.white,
+        height:screenHigh ,
         child: Center(
-          child:AnimatedOpacity(
-              opacity: _startAnimation ? 1.0 : 0.0, // Animate opacity
-              duration: Duration(seconds: 1), // Duration of the fade-in effect
-              child: Column(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             // Center vertically
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -56,8 +50,8 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               Image.asset(
                 'assets/images/ic_launcher.png',
-                width: screenWidth * 65 /100,
-                height: screenWidth * 65 /100,
+                width: screenWidth * 80 /100,
+                height: screenWidth * 80 /100,
                 // fit: BoxFit.cover,
               ),
 
@@ -68,9 +62,10 @@ class _SplashScreenState extends State<SplashScreen> {
                  style: TextStyle(
                      fontFamily: 'alfont',
                      fontWeight: FontWeight.bold,
-                     // color: AppColors.c4Actionbar,
-                     fontSize: screenWidth * 40 /100),
+                     color: AppColors.primary,
+                     fontSize: screenWidth * 10 /100),
                ),
+              SizedBox(height: screenWidth * 4 /100), // Add some spacing
               SpinKitCircle(
                 size: screenWidth * 0.2,
                 itemBuilder: (BuildContext context, int index) {
@@ -86,6 +81,6 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
         ),
       ),
-    ),));
+    ),);
   }
 }
