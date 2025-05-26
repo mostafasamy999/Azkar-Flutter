@@ -79,9 +79,9 @@ class CategoryScreen extends StatelessWidget {
                         ),
                       );
                     }),
-                _buildIslamicCard(
+                _buildIslamicCardPray(
                     title: 'القراءه في الصلوات',
-                    icon: Icons.schedule,
+                    icon: Icons.mosque,
                     gradient: LinearGradient(
                       colors: [Color(0xFF2196F3), Color(0xFF1565C0)],
                       begin: Alignment.topLeft,
@@ -175,6 +175,59 @@ class CategoryScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 6),
+          ],
+        ),
+      ),
+    );
+  }
+  Widget _buildIslamicCardPray({
+    required String title,
+    required IconData icon,
+    required LinearGradient gradient,
+    GestureTapCallback? onTap,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: gradient,
+          borderRadius: BorderRadius.circular(20.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              spreadRadius: 0,
+              blurRadius: 10,
+              offset: Offset(0, 5),
+            ),
+          ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 70,
+              height: 70,
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
+                borderRadius: BorderRadius.circular(35),
+              ),
+              child: Icon(
+                icon,
+                size: 35,
+                color: Colors.white,
+              ),
+            ),
+            SizedBox(height: 4),
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            // SizedBox(height: 6),
           ],
         ),
       ),
