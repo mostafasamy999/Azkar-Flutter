@@ -17,27 +17,19 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    _startVisibilityTimer();
-    Timer(Duration(seconds: 3),
-            ()=>Navigator.pushReplacement(context,
-            MaterialPageRoute(builder:
-                (context) =>
-                CategoryScreen()
-            )
-        )
-    );
+    // Timer(Duration(seconds: 3),
+    //         ()=>Navigator.pushReplacement(context,
+    //         MaterialPageRoute(builder:
+    //             (context) =>
+    //             CategoryScreen()
+    //         )
+    //     )
+    // );
   }
-  bool _isVisible = false; // Start as invisible
   bool _startAnimation = false; // Flag to start the animation
   late Timer _timer;
 
-  void _startVisibilityTimer() {
-    _timer = Timer(Duration(seconds: 2), () {
-      setState(() {
-        _startAnimation = true; // Start the animation after 2 seconds
-      });
-    });
-  }
+
 
   @override
   void dispose() {
@@ -60,21 +52,23 @@ class _SplashScreenState extends State<SplashScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             // Center horizontally
             children: [
-              SvgPicture.asset(
-                'assets/images/ic_launcher.svg',
-                width: 160,
-                height: 160,
+              Image.asset(
+                'assets/images/ic_launcher.png',
+                width: 260,
+                height: 260,
+                // fit: BoxFit.cover,
               ),
 
-              SizedBox(height: 20), // Add some spacing
+              SizedBox(height: 100), // Add some spacing
                Text(
-                    'صحيح الأذكار',
-                    style: TextStyle(
-                      fontSize: 40,
-                      color: AppColors.primary,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
+                    'لفضيلة الدكتور وليد الرفاعي',
+                 style: TextStyle(
+                     fontFamily: 'alfont',
+                     fontWeight: FontWeight.bold,
+                     // color: AppColors.c4Actionbar,
+                     fontSize: 60),
+               )
+
             ],
           ),
         ),

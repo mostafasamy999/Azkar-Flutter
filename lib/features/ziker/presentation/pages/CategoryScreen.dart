@@ -80,7 +80,7 @@ class CategoryScreen extends StatelessWidget {
                       );
                     }),
                 _buildIslamicCard(
-                    title: 'قرائة الصلوات',
+                    title: 'القراءه في الصلوات',
                     icon: Icons.schedule,
                     gradient: LinearGradient(
                       colors: [Color(0xFF2196F3), Color(0xFF1565C0)],
