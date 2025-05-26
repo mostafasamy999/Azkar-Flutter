@@ -67,7 +67,7 @@ class _SplashScreenState extends State<SplashScreen> {
                ),
               SizedBox(height: screenWidth * 4 /100), // Add some spacing
               SpinKitCircle(
-                size: screenWidth * 0.2,
+                size: screenWidth * 14 /100,
                 itemBuilder: (BuildContext context, int index) {
                   return DecoratedBox(
                     decoration: BoxDecoration(
