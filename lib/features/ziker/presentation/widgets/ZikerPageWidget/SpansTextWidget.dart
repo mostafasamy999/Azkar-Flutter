@@ -43,7 +43,7 @@ class SpansTextWidget extends StatelessWidget {
           child: Text(
             "(${match.group(1)})".replaceArabicNumbers(),
             style: TextStyle(
-              fontSize: style.fontSize! * 0.8, // Smaller size
+              fontSize: style.fontSize! * 0.6, // Smaller size
               color: referenceColor??Colors.blue,      // Blue color
             ),
           ),

@@ -83,7 +83,7 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
           _isSound = state.setting.noisy;
           _isViberat = state.setting.vibrate;
           _isTransfer = state.setting.transfer;
-          return _zikerTitleContent(fontSize: _fontSize + 4);
+          return _zikerTitleContent(fontSize: _fontSize + 2);
         }
         return _zikerTitleContent(fontSize: _fontSize);
       },
@@ -291,7 +291,7 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
                   child: Text(
                     myObject.isnad.replaceArabicNumbers(),
                     style: TextStyle(
-                      fontSize: _fontSize ,
+                      fontSize: _fontSize -4 ,
                       height: 1.6,
                       fontFamily: 'scheherazade',
                       // color: AppColors.c4Actionbar,
@@ -352,7 +352,7 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
               child: SpansTextWidget(
                 text: title,
                 style: TextStyle(
-                  fontSize: _fontSize + 6,
+                  fontSize: _fontSize ,
                   fontFamily: 'scheherazade',
                   height: 1.6,
                   // color: AppColors.c4Actionbar,
@@ -366,7 +366,7 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
           SpansTextWidget(
             text: matn,
             style: TextStyle(
-              fontSize: _fontSize+4,
+              fontSize: _fontSize,
               fontFamily: 'scheherazade',
               height: 1.6,
               // color: AppColors.c4Actionbar,
