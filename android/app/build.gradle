@@ -39,7 +39,7 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file("C:\\Users\\Restart\\Documents\\mykeystore\\mykeystore1.jks") // Full path to your keystore
+            storeFile file("keystore.jks") // Full path to your keystore
             storePassword "276217" // Keystore password
             keyAlias "key0"        // Alias name
             keyPassword "276217"   // Alias-specific password
