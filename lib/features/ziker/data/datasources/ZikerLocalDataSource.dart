@@ -23,7 +23,8 @@ class ZikerLocalDataSourceImpl implements ZikerLocalDataSource {
   // scheherazade font
 
   final azkarIndexList = [
-    ...[for (int i = 1; i <= 46; i++) i],
+    ...[for (int i = 1; i <= 24; i++) i],
+    ...[for (int i = 36; i <= 46; i++) i],
     ...[for (int i = 65; i <= 72; i++) i],
   ];
   final prayIndexList = [for (int i = 25; i <= 35; i++) i];

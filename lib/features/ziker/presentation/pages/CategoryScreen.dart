@@ -94,9 +94,9 @@ class CategoryScreen extends StatelessWidget {
                           MaterialPageRoute(
                               builder: (context) => MainScreen(type: 2)));
                     }),
-                _buildIslamicCard(
+                _buildIslamicCardWithImage(
                     title: getTitle(3),
-                    icon: Icons.place,
+                    imagePath: 'assets/images/omra.jpg',
                     gradient: LinearGradient(
                       colors: [Color(0xFF9C27B0), Color(0xFF6A1B9A)],
                       begin: Alignment.topLeft,
@@ -108,9 +108,9 @@ class CategoryScreen extends StatelessWidget {
                           MaterialPageRoute(
                               builder: (context) => MainScreen(type: 3)));
                     }),
-                _buildIslamicCard(
+                _buildIslamicCardWithImage(
                     title: getTitle(4),
-                    icon: Icons.location_city,
+                    imagePath: 'assets/images/haij.jpg',
                     gradient: LinearGradient(
                       colors: [Color(0xFFFF9800), Color(0xFFE65100)],
                       begin: Alignment.topLeft,
@@ -229,6 +229,66 @@ class CategoryScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             // SizedBox(height: 6),
+          ],
+        ),
+      ),
+    );
+  }
+
+// New version with image support
+  Widget _buildIslamicCardWithImage({
+    required String title,
+    required String imagePath,
+    required LinearGradient gradient,
+    GestureTapCallback? onTap,
+    double imageSize = 35,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: gradient,
+          borderRadius: BorderRadius.circular(20.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              spreadRadius: 0,
+              blurRadius: 10,
+              offset: Offset(0, 5),
+            ),
+          ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 70,
+              height: 70,
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
+                borderRadius: BorderRadius.circular(35),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(35),
+                child: Image.asset(
+                  imagePath,
+                  width: imageSize,
+                  height: imageSize,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+            SizedBox(height: 16),
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 6),
           ],
         ),
       ),
