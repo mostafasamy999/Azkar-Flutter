@@ -91,7 +91,7 @@ extension RemoveNumberInParentheses on String {
 
 String getTitle(int type) {
   if(type == 1)return 'الأذكار اليومية';
-  else if (type == 2)return 'القراءه في الصلوات';
+  else if (type == 2)return 'القراءة في الصلوات';
   else if (type == 3)return 'دليل الحج';
   else return 'دليل العمرة';
 }
