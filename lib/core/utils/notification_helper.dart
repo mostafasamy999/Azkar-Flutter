@@ -226,18 +226,21 @@ class NotificationHelper {
       return 'أذكار الصباح';
     else if (id == 4)
       return 'أذكار المساء';
-    else if (id == 5)
-      return 'أذكار دبر صلاة الفجر';
-    else if (id == 6)
-      return 'أذكار دبر صلاة الظهر';
-    else if (id == 7)
-      return 'أذكار دبر صلاة العصر';
-    else if (id == 8)
-      return 'أذكار دبر صلاة المغرب';
-    else if (id == 9)
-      return 'أذكار دبر صلاة العشاء';
-    else
-      return '';
+
+    return 'أذكار دبر الصلوات';
+
+    // else if (id == 5)
+    //   return 'أذكار دبر صلاة الفجر';
+    // else if (id == 6)
+    //   return 'أذكار دبر صلاة الظهر';
+    // else if (id == 7)
+    //   return 'أذكار دبر صلاة العصر';
+    // else if (id == 8)
+    //   return 'أذكار دبر صلاة المغرب';
+    // else if (id == 9)
+    //   return 'أذكار دبر صلاة العشاء';
+    // else
+    //   return '';
   }
 
   static Future<void> cancelNotification(int notificationId) async {
