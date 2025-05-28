@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:sahih_azkar/core/colors.dart';
 import 'package:sahih_azkar/features/ziker/presentation/pages/MainScreen.dart';
 
+import '../../../../core/new_version/new_version_android.dart';
 import '../../../../core/utils/Utils.dart';
 import '../../../../core/utils/notification_helper.dart';
 import '../widgets/TitlePageWidget/DrawerWidget.dart';
@@ -16,12 +17,11 @@ class CategoryScreen extends StatelessWidget {
   void _initializeNotifications(BuildContext context) async {
     NotificationHelper.requestPermissions();
     NotificationHelper.updatePrayersTime(context);
-    // _handleOnClickNotificationEvent(widget.title);
   }
   @override
   Widget build(BuildContext context) {
-    _initializeNotifications(context);
-    // checkForUpdateAndShowDialog(context);
+    // _initializeNotifications(context);
+    checkForUpdateAndShowDialog(context);
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(

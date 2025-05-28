@@ -69,7 +69,7 @@ class _SettingWidgetState extends State<SettingWidget> {
               _fontSetting(context),
               _counterSetting(context),
               _notifySleepAndWolkUpSetting(context),
-              _notifyPraysSetting(context),
+              // _notifyPraysSetting(context),
             ],
           ),
         ));

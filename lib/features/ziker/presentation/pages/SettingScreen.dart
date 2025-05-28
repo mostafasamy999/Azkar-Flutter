@@ -32,15 +32,15 @@ class _SettingScreenState extends State<SettingScreen> {
     evening: TimeOfDay(hour: 17, minute: 0),
     isEvening: true,
     fager: TimeOfDay(hour: 4, minute: 30),
-    isFager: true,
+    isFager: false,
     duher: TimeOfDay(hour: 12, minute: 30),
-    isDuher: true,
+    isDuher: false,
     aser: TimeOfDay(hour: 16, minute: 0),
-    isAser: true,
+    isAser: false,
     magrep: TimeOfDay(hour: 18, minute: 10),
-    isMagrep: true,
+    isMagrep: false,
     isha: TimeOfDay(hour: 19, minute: 0),
-    isIsha: true,
+    isIsha: false,
   );
   int _fontSizeType = 2;
   bool isInitialedSize = true; // to initialize setting first time only

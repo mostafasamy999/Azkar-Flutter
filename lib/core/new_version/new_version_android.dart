@@ -21,6 +21,7 @@ void checkForUpdateAndShowDialog(BuildContext context) async {
     final currentBuildNumber = packageInfo.buildNumber;
     final updateResult = await checkForUpdate();
 
+    print('mossamy');
     if (updateResult.updateAvailable) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         UpdateDialog.show(
