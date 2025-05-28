@@ -48,11 +48,13 @@ class _SplashScreenState extends State<SplashScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             // Center horizontally
             children: [
-              Image.asset(
-                'assets/images/ic_launcher.png',
-                width: screenWidth * 80 /100,
-                height: screenWidth * 80 /100,
-                // fit: BoxFit.cover,
+              ClipOval(
+                child: Image.asset(
+                  'assets/images/ic_launcher.png',
+                  width: screenWidth * 80 / 100,
+                  height: screenWidth * 80 / 100,
+                  fit: BoxFit.cover,
+                ),
               ),
 
               SizedBox(height: screenWidth * 20 /100), // Add some spacing

@@ -21,7 +21,7 @@ class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // _initializeNotifications(context);
-    checkForUpdateAndShowDialog(context);
+    // checkForUpdateAndShowDialog(context);
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
