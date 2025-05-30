@@ -49,7 +49,9 @@ class ZikerScreen extends StatelessWidget {
           } else if (state is LoadedAzkarState) {
             // Use firstWhere instead of singleWhere
             final ziker = _findZikerByTitle(zikerTitle, state);
-            return Container(child: ZikerPageWidget(azkar: ziker,type: type,));
+            return Container(child: ZikerPageWidget(azkar: ziker,type: type,onBack: (){
+              Navigator.of(context).pop();
+            },));
           } else if (state is ErrorAzkarState) {
             return MessageDisplayWidget(message: state.message);
           }

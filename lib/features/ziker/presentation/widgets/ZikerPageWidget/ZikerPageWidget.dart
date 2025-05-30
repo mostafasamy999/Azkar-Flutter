@@ -24,11 +24,13 @@ import 'SpansTextWidget.dart';
 class ZikerPageWidget extends StatefulWidget {
   final Ziker azkar;
   final int type;
+  final void Function() onBack;
 
   ZikerPageWidget({
     Key? key,
     required this.azkar,
     required this.type,
+    required this.onBack
   }) : super(key: key);
 
   @override
@@ -234,11 +236,7 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
         builder: (BuildContext dialogContext) {
           return CustomPopupWidget(() {
             Navigator.of(dialogContext).pop();
-            Navigator.pushAndRemoveUntil(
-              context,
-              MaterialPageRoute(builder: (_) => MainScreen(type: widget.type,)),
-              (route) => false,
-            );
+            widget.onBack();
           });
         });
   }
