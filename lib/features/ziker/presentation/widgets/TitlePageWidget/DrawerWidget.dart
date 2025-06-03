@@ -60,12 +60,11 @@ class DrawerWidget extends StatelessWidget {
               'تقييم صحيح الأذكار'
               // Colors.yellow,
             ),
-            _buildListTileJpg(
-              context,
-              'assets/images/icon_ganna.jpg',
-              'من أسباب دخول الجنة',
-              // AppColors.white,
-            ),
+            // _buildListTileJpg(
+            //   context,
+            //   'assets/images/icon_ganna.jpg',
+            //   'من أسباب دخول الجنة',
+            // ),
           ]),
         ));
   }
