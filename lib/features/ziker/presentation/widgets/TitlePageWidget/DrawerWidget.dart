@@ -48,18 +48,18 @@ class DrawerWidget extends StatelessWidget {
               'وصيتي',
               // AppColors.white,
             ),
-            _buildListTileSVG(
-              context,
-              'assets/images/shar.svg',
-              'مشاركة التطبيق',
-              // AppColors.white,
-            ),
-            _buildListTileOurValue(
-              context,
-              Icons.star,
-              'تقييم صحيح الأذكار'
-              // Colors.yellow,
-            ),
+            // _buildListTileSVG(
+            //   context,
+            //   'assets/images/shar.svg',
+            //   'مشاركة التطبيق',
+            //   // AppColors.white,
+            // ),
+            // _buildListTileOurValue(
+            //   context,
+            //   Icons.star,
+            //   'تقييم صحيح الأذكار'
+            //   // Colors.yellow,
+            // ),
             // _buildListTileJpg(
             //   context,
             //   'assets/images/icon_ganna.jpg',
