@@ -35,7 +35,7 @@ final appTheme = ThemeData(
     backgroundColor: AppColors.primary, // Dark Teal
     foregroundColor: Colors.white,
   ),
-  cardTheme: CardTheme(
+  cardTheme: CardThemeData(
     color: AppColors.cardBackground, // White cards
     elevation: 2,
     shape: RoundedRectangleBorder(
