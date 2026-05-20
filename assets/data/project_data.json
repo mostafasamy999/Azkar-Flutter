@@ -78,6 +78,23 @@
       }
     ]
   },
+  "applications_section": {
+    "title": "التطبيقات والبرامج",
+    "items": [
+      {
+        "id": "app1",
+        "title": "تطبيق صحيح الأذكار واحة الذاكرين",
+        "cover_image": "assets/images/apps/saheh_al_azkar.png",
+        "download_url": "https://play.google.com/store/apps/details?id=com.sahih.azkar"
+      },
+      {
+        "id": "app2",
+        "title": "تطبيق من أسباب دخول الجنة",
+        "cover_image": "assets/images/apps/asbab_jannah.png",
+        "download_url": "https://play.google.com/store/apps/details?id=com.asbab.jannah"
+      }
+    ]
+  },
   "articles_section": {
     "title": "المقالات والمنشورات الدعوية",
     "items": [
@@ -110,23 +127,6 @@
         "id": "a6",
         "title": "مختصر الكلام في التنبيه على فضل الصلاة والسلام على خير الأنام",
         "url": "https://t.me/Waleed_Alrafaee/75"
-      }
-    ]
-  },
-  "applications_section": {
-    "title": "التطبيقات الرسمية والبرامج",
-    "items": [
-      {
-        "id": "app1",
-        "title": "تطبيق صحيح الأذكار (أندرويد)",
-        "icon_image": "assets/images/apps/saheh_al_azkar.png",
-        "download_url": "https://play.google.com/store/apps/details?id=com.waleed.azkar"
-      },
-      {
-        "id": "app2",
-        "title": "تطبيق من أسباب دخول الجنة",
-        "icon_image": "assets/images/apps/asbab_dokhool_al_jannah.png",
-        "download_url": "https://play.google.com/store/apps/details?id=com.waleed.jannah"
       }
     ]
   },

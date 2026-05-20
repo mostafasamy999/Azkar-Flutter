@@ -8,6 +8,17 @@ import '../../widgets/book_card_widget.dart';
 import '../../widgets/article_tile_widget.dart';
 import '../../widgets/social_button_widget.dart';
 
+import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import '../../../domain/entities/author_entity.dart';
+import '../../../domain/entities/book_entity.dart';
+import '../../../domain/entities/article_entity.dart';
+import '../../../domain/entities/social_link_entity.dart';
+import '../../widgets/section_header_widget.dart';
+import '../../widgets/book_card_widget.dart';
+import '../../widgets/article_tile_widget.dart';
+import '../../widgets/social_button_widget.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
     required this.author,
@@ -22,6 +33,13 @@ class HomeScreen extends StatelessWidget {
   final List<ArticleEntity> articles;
   final List<SocialLinkEntity> socialLinks;
 
+  Future<void> _openUrl(String urlString) async {
+    final Uri url = Uri.parse(urlString);
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url, mode: LaunchMode.externalApplication);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
@@ -33,7 +51,7 @@ class HomeScreen extends StatelessWidget {
         body: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
-              colors: [Color(0xFFE0F2F1) , Color(0xFF80DEEA)],
+              colors: [Color(0xFFE0F2F1), Color(0xFFB2DFDB), Color(0xFF80DEEA)],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
             ),
@@ -44,7 +62,7 @@ class HomeScreen extends StatelessWidget {
                 constraints: const BoxConstraints(maxWidth: 1024),
                 child: CustomScrollView(
                   slivers: [
-                    // ── Author Profile Header ────────────────────────
+                    // ── Author Header ─────────────────────────────────
                     SliverToBoxAdapter(
                       child: Padding(
                         padding: const EdgeInsetsDirectional.only(top: 32, bottom: 16),
@@ -70,7 +88,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
 
-                    // ── Books Section ────────────────────────
+                    // ── Books Section ─────────────────────────────────
                     const SliverToBoxAdapter(
                       child: SectionHeaderWidget(title: 'الكتب والمؤلفات'),
                     ),
@@ -86,18 +104,16 @@ class HomeScreen extends StatelessWidget {
                         delegate: SliverChildBuilderDelegate(
                               (context, index) => BookCardWidget(
                             book: books[index],
-                            onDownloadTap: () {
-                              // Trigger external helper to resolve direct URL matching rule
-                            },
+                            onDownloadTap: () => _openUrl(books[index].downloadUrl),
                           ),
                           childCount: books.length,
                         ),
                       ),
                     ),
 
-                    // ── Articles Section ─────────────────────
+                    // ── Articles Section ──────────────────────────────
                     const SliverToBoxAdapter(
-                      child: SectionHeaderWidget(title: 'المقالات'),
+                      child: SectionHeaderWidget(title: 'المقالات والمنشورات'),
                     ),
                     SliverPadding(
                       padding: const EdgeInsetsDirectional.symmetric(horizontal: 24),
@@ -105,19 +121,19 @@ class HomeScreen extends StatelessWidget {
                         delegate: SliverChildBuilderDelegate(
                               (context, index) => ArticleTileWidget(
                             article: articles[index],
-                            onTap: () {},
+                            onTap: () => _openUrl(articles[index].url),
                           ),
                           childCount: articles.length,
                         ),
                       ),
                     ),
 
-                    // ── Social Media Section ─────────────────
+                    // ── Social Media Section ──────────────────────────
                     const SliverToBoxAdapter(
-                      child: SectionHeaderWidget(title: 'وسائل التواصل'),
+                      child: SectionHeaderWidget(title: 'وسائل التواصل والقنوات'),
                     ),
                     SliverPadding(
-                      padding: const EdgeInsetsDirectional.only(start: 24, end: 24, bottom: 48),
+                      padding: const EdgeInsetsDirectional.only(start: 24,end: 24, bottom: 48),
                       sliver: SliverToBoxAdapter(
                         child: Wrap(
                           spacing: 16,
@@ -125,7 +141,7 @@ class HomeScreen extends StatelessWidget {
                           alignment: WrapAlignment.center,
                           children: socialLinks.map((social) => SocialButtonWidget(
                             social: social,
-                            onTap: () {},
+                            onTap: () => _openUrl(social.url),
                           )).toList(),
                         ),
                       ),
