@@ -39,7 +39,7 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file("keystore.jks") // Full path to your keystore
+            storeFile file("azkar-keystore.jks") // Full path to your keystore
             storePassword "276217" // Keystore password
             keyAlias "key0"        // Alias name
             keyPassword "276217"   // Alias-specific password
