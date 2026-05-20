@@ -64,6 +64,7 @@ flutter:
     - assets/images/ic_launcher_small.png
     - assets/images/shar.svg
     - assets/images/
+    - assets/data/
 
   fonts:
     - family: typesetting

@@ -1,0 +1,158 @@
+{
+  "author": {
+    "name": "الشيخ الدكتور وليد بن أمين الرفاعي",
+    "profile_image": "assets/images/profile.png"
+  },
+  "books_section": {
+    "title": "الكتب والمؤلفات",
+    "items": [
+      {
+        "id": "b1",
+        "title": "الأربعون الصديقية في مناقب أبي بكر الصديق رضي الله عنه ومواقفه العلية",
+        "author_name": "وليد بن أمين الرفاعي",
+        "cover_image": "assets/images/books/al_arbaoon_al_siddiqiah.png",
+        "download_url": "https://t.me/Waleed_Alrafaee/111"
+      },
+      {
+        "id": "b2",
+        "title": "الأربعون الزوجية - نثر الرياحين في ذكر أمهات المؤمنين في أربعين حديثاً",
+        "author_name": "وليد بن أمين الرفاعي",
+        "cover_image": "assets/images/books/al_arbaoon_al_zawjiah.png",
+        "download_url": "https://t.me/Waleed_Alrafaee/125"
+      },
+      {
+        "id": "b3",
+        "title": "الأربعون العثمانية في ذكر مناقب أمير المؤمنين عثمان بن عفان رضي الله عنه ومواقفه العلية",
+        "author_name": "وليد بن أمين الرفاعي",
+        "cover_image": "assets/images/books/al_arbaoon_al_othmaniah.png",
+        "download_url": "https://t.me/Waleed_Alrafaee/120"
+      },
+      {
+        "id": "b4",
+        "title": "الأربعون العمرية في ذكر مناقب أمير المؤمنين عمر بن الخطاب رضي الله عنه ومواقفه العلية",
+        "author_name": "وليد بن أمين الرفاعي",
+        "cover_image": "assets/images/books/al_arbaoon_al_omariah.png",
+        "download_url": "https://t.me/Waleed_Alrafaee/115"
+      },
+      {
+        "id": "b5",
+        "title": "وسارعوا إلى مغفرة من ربكم ورحمة",
+        "author_name": "وليد بن أمين الرفاعي",
+        "cover_image": "assets/images/books/wa_sareoo_maghferah.png",
+        "download_url": "https://t.me/Waleed_Alrafaee/130"
+      },
+      {
+        "id": "b6",
+        "title": "الأربعون العلوية في ذكر مناقب أمير المؤمنين علي بن أبي طالب رضي الله عنه ومواقفه العلية",
+        "author_name": "وليد بن أمين الرفاعي",
+        "cover_image": "assets/images/books/al_arbaoon_al_alawiah.png",
+        "download_url": "https://t.me/Waleed_Alrafaee/135"
+      },
+      {
+        "id": "b7",
+        "title": "السور والآيات التي قرأ بها رسول الله صلى الله عليه وسلم في الصلوات",
+        "author_name": "وليد بن أمين الرفاعي",
+        "cover_image": "assets/images/books/al_sowar_wal_ayat.png",
+        "download_url": "https://www.alukah.net/library/0/164906/"
+      },
+      {
+        "id": "b8",
+        "title": "فضل الإله في التنبيه على خطورة التهاون في تسوية الصفوف في الصلاة",
+        "author_name": "وليد بن أمين الرفاعي",
+        "cover_image": "assets/images/books/tasweat_al_sofoof.png",
+        "download_url": "https://t.me/Waleed_Alrafaee/140"
+      },
+      {
+        "id": "b9",
+        "title": "المسائل التأصيلية في المتابعات الحديثية",
+        "author_name": "وليد بن أمين الرفاعي",
+        "cover_image": "assets/images/books/al_masael_al_taseeliah.png",
+        "download_url": "https://www.alukah.net/library/0/158338/"
+      },
+      {
+        "id": "b10",
+        "title": "الأسئلة العشرة الحسان في تقريب كتاب الإتقان في علوم القرآن",
+        "author_name": "وليد بن أمين الرفاعي",
+        "cover_image": "assets/images/books/al_aselah_al_ashrah.png",
+        "download_url": "https://www.alukah.net/library/0/157102/"
+      }
+    ]
+  },
+  "articles_section": {
+    "title": "المقالات والمنشورات الدعوية",
+    "items": [
+      {
+        "id": "a1",
+        "title": "الأذكار والدعوات دبر الصلوات المكتوبات",
+        "url": "https://t.me/Waleed_Alrafaee/50"
+      },
+      {
+        "id": "a2",
+        "title": "الإيقاظ في أذكار النوم والاستيقاظ",
+        "url": "https://t.me/Waleed_Alrafaee/55"
+      },
+      {
+        "id": "a3",
+        "title": "نهي آل بيت رسول الله صلى الله عليه وسلم عن الدعاء عند قبر النبي صلى الله عليه وسلم",
+        "url": "https://t.me/Waleed_Alrafaee/60"
+      },
+      {
+        "id": "a4",
+        "title": "دراسة حديث موافاة أم سلمة رضي الله عنها لرسول الله بمكة في صلاة صبح يوم النحر",
+        "url": "https://t.me/Waleed_Alrafaee/65"
+      },
+      {
+        "id": "a5",
+        "title": "تيسير معرفة العدالة وشروطها عند المحدثين",
+        "url": "https://t.me/Waleed_Alrafaee/70"
+      },
+      {
+        "id": "a6",
+        "title": "مختصر الكلام في التنبيه على فضل الصلاة والسلام على خير الأنام",
+        "url": "https://t.me/Waleed_Alrafaee/75"
+      }
+    ]
+  },
+  "applications_section": {
+    "title": "التطبيقات الرسمية والبرامج",
+    "items": [
+      {
+        "id": "app1",
+        "title": "تطبيق صحيح الأذكار (أندرويد)",
+        "icon_image": "assets/images/apps/saheh_al_azkar.png",
+        "download_url": "https://play.google.com/store/apps/details?id=com.waleed.azkar"
+      },
+      {
+        "id": "app2",
+        "title": "تطبيق من أسباب دخول الجنة",
+        "icon_image": "assets/images/apps/asbab_dokhool_al_jannah.png",
+        "download_url": "https://play.google.com/store/apps/details?id=com.waleed.jannah"
+      }
+    ]
+  },
+  "social_media": {
+    "title": "وسائل التواصل والقنوات الدعوية",
+    "links": [
+      {
+        "platform": "telegram",
+        "title": "القناة الرسمية لفضيلة الشيخ على تليجرام",
+        "url": "https://t.me/Waleed_Alrafaee"
+      },
+      {
+        "platform": "whatsapp",
+        "title": "قناة الفتاوى والأسئلة الشرعية (واتساب)",
+        "url": "https://whatsapp.com/channel/0029Va7X"
+      },
+      {
+        "platform": "facebook",
+        "title": "الصفحة الرسمية لفضيلة الشيخ (فيسبوك)",
+        "url": "https://www.facebook.com/Waleed.Alrafaee"
+      },
+      {
+        "platform": "youtube",
+        "title": "قناة الدروس والمحاضرات المرئية (يوتيوب)",
+        "url": "https://www.youtube.com/@Waleed_Alrafaee"
+      }
+    ]
+  }
+}
