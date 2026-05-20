@@ -35,13 +35,7 @@ final appTheme = ThemeData(
     backgroundColor: AppColors.primary, // Dark Teal
     foregroundColor: Colors.white,
   ),
-  cardTheme: CardTheme(
-    color: AppColors.cardBackground, // White cards
-    elevation: 2,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(12),
-    ),
-  ),
+
   inputDecorationTheme: InputDecorationTheme(
     floatingLabelStyle: TextStyle(color: AppColors.primary),
     iconColor: AppColors.secondary, // Warm Orange icons
