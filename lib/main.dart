@@ -7,7 +7,9 @@ import 'features/ziker/presentation/bloc/azkar/azkar/AzkarBloc.dart';
 import 'features/ziker/presentation/bloc/azkar/setting/SettingBloc.dart';
 import 'features/ziker/presentation/pages/SplashScreen.dart';
 import 'injection_container.dart' as di;
-
+/*
+flutter fvm 3.27.0
+ */
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   NotificationHelper.init();
