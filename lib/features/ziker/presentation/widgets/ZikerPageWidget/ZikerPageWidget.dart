@@ -70,7 +70,7 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
         children: <Widget>[
           _ZikerTitle(),
           _ViewPager(),
-          _BottomRow(),
+          if (widget.azkar.hasCounter) _BottomRow(),
         ],
       ),
     );

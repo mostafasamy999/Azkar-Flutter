@@ -434,6 +434,7 @@ class ZikerLocalDataSourceImpl implements ZikerLocalDataSource {
       ZikerResponse(
         6,
         "من جوامع الدعاء من الصحيحين",
+        hasCounter: false,
         [
           HadithResponse(
               1,
@@ -898,7 +899,7 @@ class ZikerLocalDataSourceImpl implements ZikerLocalDataSource {
       ]),
 
       /// Prays
-      ZikerResponse(25, 'ما كان يقرأ به ﷺ في صلاة الفجر', [
+      ZikerResponse(25, 'ما كان يقرأ به ﷺ في صلاة الفجر', hasCounter: false, [
         HadithResponse(
           1,
           'كان يقرأ فيها ما بين الستين إلى المائة آية.(1) وكان يُطَوّل في الركعة الأولى، ويُقَصِّر في الثانية.(2)',
@@ -990,7 +991,7 @@ class ZikerLocalDataSourceImpl implements ZikerLocalDataSource {
             0,
             hasTitle: true),
       ]),
-      ZikerResponse(26, 'ما كان يقرأ به ﷺ في صلاتي الظهر والعصر', [
+      ZikerResponse(26, 'ما كان يقرأ به ﷺ في صلاتي الظهر والعصر', hasCounter: false, [
         HadithResponse(
             1,
             ' كان يقرأ قدر سورة السجدة أو قدر ثلاثين آية، ويُطَوِّلُ في الأولى ما لا يُطَوِّل في الثانية(1)\n' +
@@ -1045,7 +1046,7 @@ class ZikerLocalDataSourceImpl implements ZikerLocalDataSource {
             0,
             hasTitle: true),
       ]),
-      ZikerResponse(27, 'ما كان يقرأ به ﷺ في صلاة المغرب', [
+      ZikerResponse(27, 'ما كان يقرأ به ﷺ في صلاة المغرب', hasCounter: false, [
         HadithResponse(
             1,
             'سورة ( الأعراف )' +
@@ -1107,7 +1108,7 @@ class ZikerLocalDataSourceImpl implements ZikerLocalDataSource {
             0,
             hasTitle: true),
       ]),
-      ZikerResponse(28, 'ما كان يقرأ به ﷺ في صلاة العشاء', [
+      ZikerResponse(28, 'ما كان يقرأ به ﷺ في صلاة العشاء', hasCounter: false, [
         HadithResponse(
             1,
             'سورة ( الانشقاق )' +
@@ -1133,7 +1134,7 @@ class ZikerLocalDataSourceImpl implements ZikerLocalDataSource {
             0,
             hasTitle: true),
       ]),
-      ZikerResponse(29, 'ما كان يقرأ به ﷺ في صلاة الوتر', [
+      ZikerResponse(29, 'ما كان يقرأ به ﷺ في صلاة الوتر', hasCounter: false, [
         HadithResponse(
             1,
             'سورة ( الأعلى و الكافرون و الإخلاص)' +
@@ -1143,7 +1144,7 @@ class ZikerLocalDataSourceImpl implements ZikerLocalDataSource {
             0,
             hasTitle: true),
       ]),
-      ZikerResponse(30, 'ما كان يقرأ به ﷺ في فجر الجمعة', [
+      ZikerResponse(30, 'ما كان يقرأ به ﷺ في فجر الجمعة', hasCounter: false, [
         HadithResponse(
             1,
             'سورة ( السجدة والانسان )(1) ' +
@@ -1154,7 +1155,7 @@ class ZikerLocalDataSourceImpl implements ZikerLocalDataSource {
             0,
             hasTitle: true),
       ]),
-      ZikerResponse(31, 'ما كان يقرأ به ﷺ في ركعتي الفجـر', [
+      ZikerResponse(31, 'ما كان يقرأ به ﷺ في ركعتي الفجـر', hasCounter: false, [
         HadithResponse(
             1,
             'سورة ( الكافرون و الإخلاص)' +
@@ -1176,7 +1177,7 @@ class ZikerLocalDataSourceImpl implements ZikerLocalDataSource {
             0,
             hasTitle: true),
       ]),
-      ZikerResponse(32, 'ما كان يقرأ به ﷺ في صلاة الجمعة', [
+      ZikerResponse(32, 'ما كان يقرأ به ﷺ في صلاة الجمعة', hasCounter: false, [
         HadithResponse(
             1,
             'سورة (الجمعة والمنافقون)' +
@@ -1196,7 +1197,7 @@ class ZikerLocalDataSourceImpl implements ZikerLocalDataSource {
             0,
             hasTitle: true),
       ]),
-      ZikerResponse(33, 'ما كان يقرأ به ﷺ في صلاة العيدين', [
+      ZikerResponse(33, 'ما كان يقرأ به ﷺ في صلاة العيدين', hasCounter: false, [
         HadithResponse(
             1,
             'سورة ( ق و القمر)' +
@@ -1214,7 +1215,7 @@ class ZikerLocalDataSourceImpl implements ZikerLocalDataSource {
             0,
             hasTitle: true),
       ]),
-      ZikerResponse(34, 'ما كان يقرأ به ﷺ صلاة الكسوف والخسوف', [
+      ZikerResponse(34, 'ما كان يقرأ به ﷺ صلاة الكسوف والخسوف', hasCounter: false, [
         HadithResponse(
             1,
             '- كان ﷺ يقرأ الفاتحة في كل ركعة وليس في القراءة بعدها في صلاة الكسوف أو الخسوف شيء محدد ، بل يقرأ فيها بما تيسر له من القرآن.(1)' +
@@ -1227,7 +1228,7 @@ class ZikerLocalDataSourceImpl implements ZikerLocalDataSource {
             1,
             0),
       ]),
-      ZikerResponse(35, 'ما كان يقرأ به ﷺ في صلاة الاستسقاء', [
+      ZikerResponse(35, 'ما كان يقرأ به ﷺ في صلاة الاستسقاء', hasCounter: false, [
         HadithResponse(
             1,
             'سورة ( الاعلى و الغاشية)\n' +
