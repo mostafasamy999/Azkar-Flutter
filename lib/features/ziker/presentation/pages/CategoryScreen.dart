@@ -8,6 +8,7 @@ import '../../../../core/new_version/new_version_android.dart';
 import '../../../../core/utils/Utils.dart';
 import '../../../../core/utils/notification_helper.dart';
 import '../widgets/TitlePageWidget/DrawerWidget.dart';
+import 'TasbeehScreen.dart';
 import 'ZikerScreen.dart';
 
 // Alternative version with Islamic-themed icons and colors
@@ -121,6 +122,20 @@ class CategoryScreen extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) => MainScreen(type: 4)));
+                    }),
+                _buildIslamicCard(
+                    title: 'المسبحة',
+                    icon: Icons.touch_app,
+                    gradient: LinearGradient(
+                      colors: [AppColors.primaryLight, AppColors.primary],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const TasbeehScreen()));
                     }),
               ],
             ))),

@@ -19,6 +19,7 @@ import 'features/ziker/domain/usecases/GetOldSettingUsecase.dart';
 import 'features/ziker/domain/usecases/GetPrayerTimesUsecase.dart';
 import 'features/ziker/domain/usecases/SetNewSettingUsecase.dart';
 import 'features/ziker/presentation/bloc/PrayerTime/PrayerTimeCubit.dart';
+import 'features/ziker/presentation/bloc/tasbeeh/TasbeehCubit.dart';
 import 'features/ziker/presentation/bloc/azkar/azkar/AzkarBloc.dart';
 import 'package:http/http.dart' as http;
 
@@ -37,6 +38,7 @@ Future<void> init() async {
   sl.registerFactory(
       () => SettingBloc(getSettingUsecase: sl(), updateSettingUsecase: sl()));
   sl.registerFactory(() => PrayerTimesCubit(getPrayerTimesUsecase: sl()));
+  sl.registerFactory(() => TasbeehCubit());
 
   // Usecases
   sl.registerLazySingleton(() => GetPrayAzkarUseCase(sl()));

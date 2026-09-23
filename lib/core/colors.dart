@@ -40,6 +40,7 @@ class AppColors {
   static const Color omraColor = Color(0xFF9C27B0);      // Purple
 
   static const Color primary = Color(0xFF00695C);        // Dark Teal
+  static const Color primaryLight = Color(0xFF009688);   // Teal
   static const Color secondary = Color(0xFFFFB74D);      // Warm Orange
   static const Color background = Color(0xFFF5F5F5);     // Light Gray
   static const Color cardBackground = Color(0xFFFFFFFF); // White for cards
