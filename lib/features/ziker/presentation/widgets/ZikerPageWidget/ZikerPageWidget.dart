@@ -42,7 +42,7 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
   int _currentPage = 0;
   double _fontSize = Utils().fontSize(FontSize.Median);
   bool _isViberat = true;
-  bool _isSound = true;
+  bool _isSound = false;
   bool _isTransfer = true;
 
   AudioPlayer audioPlayer = AudioPlayer();

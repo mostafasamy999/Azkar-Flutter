@@ -20,7 +20,7 @@ class SettingScreen extends StatefulWidget {
 class _SettingScreenState extends State<SettingScreen> {
   Setting setting = Setting(
     fontSize: FontSize.Median,
-    noisy: true,
+    noisy: false,
     vibrate: true,
     transfer: true,
     walkUp: TimeOfDay(hour: 6, minute: 30),
