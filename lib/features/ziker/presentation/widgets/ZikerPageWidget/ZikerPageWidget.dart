@@ -19,6 +19,8 @@ import '../../pages/MainScreen.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:vibration/vibration.dart';
 
+import '../../../../quran/presentation/pages/NewPartQuranScreen.dart';
+
 import 'SpansTextWidget.dart';
 
 class ZikerPageWidget extends StatefulWidget {
@@ -275,6 +277,7 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 _MatnTexts(ZikerIndex: widget.azkar.id, hadith: myObject),
+                if (myObject.hasQuranReference) _ReadInQuranButton(myObject),
                 if (myObject.isnad.isNotEmpty)
                   CustomPaint(
                     size: ui.Size(double.infinity, 2),
@@ -301,6 +304,26 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
           ),
         )
       ],
+    );
+  }
+
+  Widget _ReadInQuranButton(Hadith hadith) {
+    return Align(
+      alignment: Alignment.center,
+      child: TextButton.icon(
+        onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => NewPartQuranScreen(
+              surahNumber: hadith.quranSurahNumber!,
+              startAyah: hadith.quranStartAyah!,
+              endAyah: hadith.quranEndAyah!,
+            ),
+          ),
+        ),
+        icon: const Icon(Icons.menu_book),
+        label: Text('قراءة الآيات في القرآن'.replaceArabicNumbers()),
+      ),
     );
   }
 

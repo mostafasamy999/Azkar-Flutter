@@ -49,6 +49,9 @@ class ZikerLocalDataSourceImpl implements ZikerLocalDataSource {
             "البخاري 4569",
             1,
             0,
+            quranSurahNumber: 3,
+            quranStartAyah: 190,
+            quranEndAyah: 200,
           ),
           HadithResponse(
               2,

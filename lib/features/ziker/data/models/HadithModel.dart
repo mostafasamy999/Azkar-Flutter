@@ -9,6 +9,12 @@ class HadithResponse extends Hadith {
       String isnad,
       int no_repeat,
       int state,
-      {bool hasTitle = false})
-      : super(id, matn, isnad, no_repeat, state, hasTitle);
+      {bool hasTitle = false,
+      int? quranSurahNumber,
+      int? quranStartAyah,
+      int? quranEndAyah})
+      : super(id, matn, isnad, no_repeat, state, hasTitle,
+            quranSurahNumber: quranSurahNumber,
+            quranStartAyah: quranStartAyah,
+            quranEndAyah: quranEndAyah);
 }
