@@ -10,11 +10,7 @@ class HadithResponse extends Hadith {
       int no_repeat,
       int state,
       {bool hasTitle = false,
-      int? quranSurahNumber,
-      int? quranStartAyah,
-      int? quranEndAyah})
+      List<QuranReference>? quranReferences})
       : super(id, matn, isnad, no_repeat, state, hasTitle,
-            quranSurahNumber: quranSurahNumber,
-            quranStartAyah: quranStartAyah,
-            quranEndAyah: quranEndAyah);
+            quranReferences: quranReferences);
 }

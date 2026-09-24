@@ -315,9 +315,7 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
           context,
           MaterialPageRoute(
             builder: (_) => NewPartQuranScreen(
-              surahNumber: hadith.quranSurahNumber!,
-              startAyah: hadith.quranStartAyah!,
-              endAyah: hadith.quranEndAyah!,
+              references: hadith.quranReferences!,
             ),
           ),
         ),

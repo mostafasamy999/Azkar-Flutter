@@ -1,5 +1,20 @@
 import 'package:equatable/equatable.dart';
 
+class QuranReference extends Equatable {
+  final int surahNumber;
+  final int startAyah;
+  final int endAyah;
+
+  const QuranReference({
+    required this.surahNumber,
+    required this.startAyah,
+    required this.endAyah,
+  });
+
+  @override
+  List<Object?> get props => [surahNumber, startAyah, endAyah];
+}
+
 class Hadith extends Equatable {
   final int id;
   final String matn;
@@ -7,19 +22,15 @@ class Hadith extends Equatable {
   final int no_repeat;
   int state;
   final bool hasTitle ;
-  final int? quranSurahNumber;
-  final int? quranStartAyah;
-  final int? quranEndAyah;
+  final List<QuranReference>? quranReferences;
 
   Hadith(this.id, this.matn, this.isnad, this.no_repeat, this.state,
       this.hasTitle, {
-        this.quranSurahNumber,
-        this.quranStartAyah,
-        this.quranEndAyah,
+        this.quranReferences,
       });
 
-  bool get hasQuranReference => quranSurahNumber != null && quranStartAyah != null && quranEndAyah != null;
+  bool get hasQuranReference => quranReferences != null && quranReferences!.isNotEmpty;
 
   @override
-  List<Object?> get props => [id, matn, isnad, no_repeat, state, hasTitle, quranSurahNumber, quranStartAyah, quranEndAyah];
+  List<Object?> get props => [id, matn, isnad, no_repeat, state, hasTitle, quranReferences];
 }
