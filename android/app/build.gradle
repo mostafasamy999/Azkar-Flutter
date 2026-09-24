@@ -37,8 +37,8 @@ android {
         applicationId "com.samy.azkar2"
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion 36
-        versionCode 9
-        versionName "1.7.0"
+        versionCode 10
+        versionName "1.7.1"
     }
 
     // 16 KB page size: keep native libs uncompressed so AGP aligns them to 16 KB.
