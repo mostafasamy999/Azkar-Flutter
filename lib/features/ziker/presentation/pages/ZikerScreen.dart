@@ -14,8 +14,9 @@ import '../widgets/titlePageWidget/message_display_widget.dart';
 class ZikerScreen extends StatelessWidget {
   final String zikerTitle;
   final int type;
+  final int initialPage; // hadith index to open on (used by search)
 
-  ZikerScreen({required this.zikerTitle,required this.type});
+  ZikerScreen({required this.zikerTitle,required this.type,this.initialPage = 0});
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +50,7 @@ class ZikerScreen extends StatelessWidget {
           } else if (state is LoadedAzkarState) {
             // Use firstWhere instead of singleWhere
             final ziker = _findZikerByTitle(zikerTitle, state);
-            return Container(child: ZikerPageWidget(azkar: ziker,type: type,onBack: (){
+            return Container(child: ZikerPageWidget(azkar: ziker,type: type,initialPage: initialPage,onBack: (){
               Navigator.of(context).pop();
             },));
           } else if (state is ErrorAzkarState) {

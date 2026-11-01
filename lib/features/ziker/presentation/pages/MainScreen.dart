@@ -11,6 +11,7 @@ import '../bloc/azkar/setting/SettingBloc.dart';
 import '../widgets/TitlePageWidget/DrawerWidget.dart';
 import '../widgets/titlePageWidget/TitlesListPageWidget.dart';
 import '../widgets/titlePageWidget/message_display_widget.dart';
+import 'SearchScreen.dart';
 import 'ZikerScreen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -45,6 +46,18 @@ class _MyHomePageState extends State<MainScreen> {
         style: TextStyle(
             fontSize: 24),
       ),
+      actions: [
+        IconButton(
+          icon: Icon(Icons.search),
+          tooltip: 'البحث',
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const SearchScreen()),
+            );
+          },
+        ),
+      ],
   );
 
   Widget _buildBody() {

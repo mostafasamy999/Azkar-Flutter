@@ -8,6 +8,7 @@ import '../../../../core/new_version/new_version_android.dart';
 import '../../../../core/utils/Utils.dart';
 import '../../../../core/utils/notification_helper.dart';
 import '../widgets/TitlePageWidget/DrawerWidget.dart';
+import 'SearchScreen.dart';
 import 'TasbeehScreen.dart';
 import 'ZikerScreen.dart';
 
@@ -45,6 +46,18 @@ class CategoryScreen extends StatelessWidget {
               fontSize: 24,
             ),
           ),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.search),
+              tooltip: 'البحث',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SearchScreen()),
+                );
+              },
+            ),
+          ],
           elevation: 2,
         ),
 

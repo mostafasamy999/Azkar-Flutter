@@ -27,12 +27,14 @@ class ZikerPageWidget extends StatefulWidget {
   final Ziker azkar;
   final int type;
   final void Function() onBack;
+  final int initialPage;
 
   ZikerPageWidget({
     Key? key,
     required this.azkar,
     required this.type,
-    required this.onBack
+    required this.onBack,
+    this.initialPage = 0
   }) : super(key: key);
 
   @override
@@ -40,8 +42,10 @@ class ZikerPageWidget extends StatefulWidget {
 }
 
 class _ZikerPageWidgetState extends State<ZikerPageWidget> {
-  final PageController _pageController = PageController();
-  int _currentPage = 0;
+  late final PageController _pageController =
+      PageController(initialPage: _currentPage);
+  late int _currentPage =
+      widget.initialPage.clamp(0, max(widget.azkar.arr.length - 1, 0));
   double _fontSize = Utils().fontSize(FontSize.Median);
   bool _isViberat = true;
   bool _isSound = false;
@@ -352,13 +356,8 @@ class _ZikerPageWidgetState extends State<ZikerPageWidget> {
   }
 
   Widget _MatnTexts({required int ZikerIndex, required Hadith hadith}) {
-    String matn = hadith.matn;
-    String title = "";
-    if (hadith.hasTitle) {
-      List<String> parts = hadith.matn.split('\n');
-      title = parts.isNotEmpty ? parts.first : "";
-      matn = parts.length > 1 ? parts.sublist(1).join('\n') : "";
-    }
+    String matn = hadith.content;
+    String title = hadith.title;
     return Container(
       alignment: Alignment.topRight,
       padding: EdgeInsets.all(8.0),

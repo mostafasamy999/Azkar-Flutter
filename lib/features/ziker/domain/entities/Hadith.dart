@@ -31,6 +31,15 @@ class Hadith extends Equatable {
 
   bool get hasQuranReference => quranReferences != null && quranReferences!.isNotEmpty;
 
+  // when hasTitle, the first line of matn is the hadith title
+  String get title => hasTitle ? matn.split('\n').first : "";
+
+  String get content {
+    if (!hasTitle) return matn;
+    final parts = matn.split('\n');
+    return parts.length > 1 ? parts.sublist(1).join('\n') : "";
+  }
+
   @override
   List<Object?> get props => [id, matn, isnad, no_repeat, state, hasTitle, quranReferences];
 }
