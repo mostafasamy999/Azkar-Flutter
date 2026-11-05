@@ -8,6 +8,7 @@ import '../../../../core/new_version/new_version_android.dart';
 import '../../../../core/utils/Utils.dart';
 import '../../../../core/utils/notification_helper.dart';
 import '../widgets/TitlePageWidget/DrawerWidget.dart';
+import '../../../prayer_times/presentation/pages/PrayerTimesScreen.dart';
 import 'SearchScreen.dart';
 import 'TasbeehScreen.dart';
 import 'ZikerScreen.dart';
@@ -149,6 +150,20 @@ class CategoryScreen extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) => const TasbeehScreen()));
+                    }),
+                _buildIslamicCard(
+                    title: 'مواقيت الصلاة',
+                    icon: Icons.access_time_filled,
+                    gradient: LinearGradient(
+                      colors: [Color(0xFF3F51B5), Color(0xFF283593)],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const PrayerTimesScreen()));
                     }),
               ],
             ))),

@@ -3,6 +3,59 @@ import 'package:geolocator/geolocator.dart';
 import 'InternetConnection.dart';
 
 class LocationUtils {
+  /// Asks for permission if needed and returns the device's current GPS
+  /// position. Throws an [Exception] with an Arabic, user-facing message.
+  static Future<Position> getCurrentPosition() async {
+    final serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      throw Exception('خدمات الموقع غير مفعلة');
+    }
+
+    var permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        throw Exception('تم رفض إذن الموقع');
+      }
+    }
+    if (permission == LocationPermission.deniedForever) {
+      throw Exception('تم رفض إذن الموقع نهائياً - يرجى تفعيله من الإعدادات');
+    }
+
+    try {
+      return await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high,
+        timeLimit: const Duration(seconds: 15),
+      );
+    } catch (e) {
+      print('High accuracy failed, trying medium accuracy: $e');
+      try {
+        return await Geolocator.getCurrentPosition(
+          desiredAccuracy: LocationAccuracy.medium,
+          timeLimit: const Duration(seconds: 10),
+        );
+      } catch (e) {
+        final last = await Geolocator.getLastKnownPosition();
+        if (last != null) return last;
+        throw Exception('تعذر تحديد موقعك، حاول مرة اخرى');
+      }
+    }
+  }
+
+  /// Best-effort human-readable place name ("City, Country"); null on failure.
+  static Future<String?> getPlaceName(double lat, double lng) async {
+    try {
+      final placemarks = await placemarkFromCoordinates(lat, lng);
+      if (placemarks.isEmpty) return null;
+      final p = placemarks.first;
+      final city = _getBestCityName(p);
+      final parts = [if (city != 'Unknown') city, if (p.country != null) p.country!];
+      return parts.isEmpty ? null : parts.join('، ');
+    } catch (_) {
+      return null;
+    }
+  }
+
   static Future<Map<String, String>> getCurrentCityAndCountry() async {
     Map<String, String> locationData = {
       'city': 'Unknown',
@@ -15,43 +68,7 @@ class LocationUtils {
         throw Exception('تاكد من اتصال الانترنت');
       }
 
-      // Check if location services are enabled
-      bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
-      if (!serviceEnabled) {
-        throw Exception('خدمات الموقع غير مفعلة');
-      }
-
-      // Check permissions
-      LocationPermission permission = await Geolocator.checkPermission();
-      if (permission == LocationPermission.denied) {
-        permission = await Geolocator.requestPermission();
-        if (permission == LocationPermission.denied) {
-          throw Exception('تم رفض إذن الموقع');
-        }
-      }
-
-      if (permission == LocationPermission.deniedForever) {
-        throw Exception('تم رفض إذن الموقع نهائياً - يرجى تفعيله من الإعدادات');
-      }
-
-      print('Getting current position...');
-
-      // Get current position with fallback options
-      Position position;
-      try {
-        // Try high accuracy first
-        position = await Geolocator.getCurrentPosition(
-          desiredAccuracy: LocationAccuracy.high,
-          timeLimit: Duration(seconds: 15),
-        );
-      } catch (e) {
-        print('High accuracy failed, trying medium accuracy: $e');
-        // Fallback to medium accuracy
-        position = await Geolocator.getCurrentPosition(
-          desiredAccuracy: LocationAccuracy.medium,
-          timeLimit: Duration(seconds: 10),
-        );
-      }
+      final position = await getCurrentPosition();
 
       print('Position obtained: ${position.latitude}, ${position.longitude}');
 

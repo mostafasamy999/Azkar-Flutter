@@ -24,6 +24,12 @@ import 'features/ziker/presentation/bloc/search/SearchCubit.dart';
 import 'features/ziker/presentation/bloc/azkar/azkar/AzkarBloc.dart';
 import 'package:http/http.dart' as http;
 
+import 'features/prayer_times/data/datasources/PrayerTimesByLocationDataSource.dart';
+import 'features/prayer_times/data/repositories/LocationPrayerTimesRepositoryImpl.dart';
+import 'features/prayer_times/domain/repositories/LocationPrayerTimesRepository.dart';
+import 'features/prayer_times/domain/usecases/GetTodayPrayerTimesUsecase.dart';
+import 'features/prayer_times/presentation/bloc/PrayerTimesScreenCubit.dart';
+
 import 'features/ziker/presentation/bloc/azkar/setting/SettingBloc.dart';
 
 final sl = GetIt.instance;
@@ -41,6 +47,7 @@ Future<void> init() async {
   sl.registerFactory(() => PrayerTimesCubit(getPrayerTimesUsecase: sl()));
   sl.registerFactory(() => TasbeehCubit());
   sl.registerFactory(() => SearchCubit());
+  sl.registerFactory(() => PrayerTimesScreenCubit(getTodayPrayerTimes: sl()));
 
   // Usecases
   sl.registerLazySingleton(() => GetPrayAzkarUseCase(sl()));
@@ -50,6 +57,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => GetPrayerTimesUsecase(sl()));
   sl.registerLazySingleton(() => GetHaijAzkarUseCase(sl()));
   sl.registerLazySingleton(() => GetOmraAzkarUseCase(sl()));
+  sl.registerLazySingleton(() => GetTodayPrayerTimesUsecase(sl()));
 
   // Repository
   sl.registerLazySingleton<ZikerRepository>(
@@ -58,6 +66,8 @@ Future<void> init() async {
       () => SettingRepositoryImpl(settingDataSource: sl()));
   sl.registerLazySingleton<PrayerTimeRepository>(
       () => PrayerTimeRepositoryImpl(remoteDataSource: sl()));
+  sl.registerLazySingleton<LocationPrayerTimesRepository>(
+      () => LocationPrayerTimesRepositoryImpl(dataSource: sl()));
 
   // Datasources
   sl.registerLazySingleton<ZikerLocalDataSource>(
@@ -66,6 +76,8 @@ Future<void> init() async {
       () => SettingDataSourceImpl(sharedPreferences: sl()));
   sl.registerLazySingleton<PrayerTimesRemoteDataSource>(
       () => PrayerTimesRemoteDataSourceImpl(client: sl()));
+  sl.registerLazySingleton<PrayerTimesByLocationDataSource>(
+      () => PrayerTimesByLocationDataSourceImpl(client: sl(), prefs: sl()));
 
   // External
   final sharedPreferences = await SharedPreferences.getInstance();
